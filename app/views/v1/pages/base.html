@@ -1,0 +1,54 @@
+{% extends "../base.html" %}
+
+{% block header %}
+
+  {{ mojHeader({
+    organisationLabel: {
+      text: 'Ministry of Justice',
+      href: '/v1'
+    },
+    serviceLabel: {
+      text: 'Form Builder Editor: HMCTS complaints form',
+      href: '/v1'
+    },
+    navigation: {
+      label: 'Account navigation',
+      items: [
+        {
+          text: 'Forms',
+          href: '/v1'
+        },{
+          text: 'Preview',
+          href: '/v1'
+        }, {
+          text: 'Sign out',
+          href: '#'
+        }
+      ]
+    }
+  }) }}
+
+  {% set searchHtml %}
+    {{govukButton({
+      text: 'Preview',
+      classes: 'govuk-!-margin-bottom-0 app-form-preview-button'
+    })}}
+  {% endset %}
+
+  {{ mojPrimaryNavigation({
+    label: 'Primary navigation',
+    items: [
+      {
+        text: 'Pages',
+        href: '/v1',
+        active: pageId == 'pages'
+      },
+      {
+        text: 'Settings',
+        href: '/v1',
+        active: pageId == 'settings'
+      }
+    ],
+    searchHtml: searchHtml
+  }) }}
+{% endblock %}

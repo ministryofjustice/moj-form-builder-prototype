@@ -1,0 +1,92 @@
+{% extends "./base.html" %}
+
+{% set pageId = 'pages' %}
+
+{% block content %}
+
+  {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Pages</h1>'
+    },
+    items: [{
+      text: 'Create page'
+    }]
+  }) }}
+
+  <div class="moj-action-bar">
+
+    {{ mojButtonMenu({
+      items: [{
+        text: 'Reorder',
+        classes: 'govuk-button--secondary'
+      }]
+    }) }}
+
+    <div class="govuk-!-font-size-19 govuk-!-margin-top-2" style="float: right; font-family: GDS Transport">
+      <span>List</span> / <a href="/v1/pages/flow">Flow</a>
+    </div>
+
+  </div>
+
+  {{ govukTable({
+    head: [
+      {
+        text: "Name of page"
+      },
+      {
+        text: "Type"
+      },
+      {
+        text: "Actions"
+      }
+    ],
+    rows: [
+    [
+        {
+          html: 'Start page<br><span class="govuk-!-font-size-16">/</span>'
+        },
+        {
+          html: 'Start page'
+        },
+        {
+          html: '<a href="/v1/pages/edit">Edit</a>'
+        }
+      ],
+      [
+        {
+          html: 'Your name<br><span class="govuk-!-font-size-16">/name</span>'
+        },
+        {
+          html: 'Single question'
+        },
+        {
+          html: '<a href="/v1/pages/edit">Edit</a>'
+        }
+      ],
+      [
+        {
+          html: 'Email address<br><span class="govuk-!-font-size-16">/email-address</span>'
+        },
+        {
+          html: 'Single question'
+        },
+        {
+          html: '<a href="/v1/pages/edit">Edit</a>'
+        }
+      ],
+      [
+        {
+          html: 'Your complaint<br><span class="govuk-!-font-size-16">/email-address</span>'
+        },
+        {
+          html: 'Multiple question'
+        },
+        {
+          html: '<a href="/v1/pages/edit">Edit</a>'
+        }
+      ]
+    ]
+  }) }}
+
+
+{% endblock %}
