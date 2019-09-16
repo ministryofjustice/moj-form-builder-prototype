@@ -5,6 +5,8 @@
   Form Builder prototype
 {% endblock %}
 
+{% from "hypothesis/macro.njk" import appHypothesis %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -12,6 +14,55 @@
       <h1 class="govuk-heading-xl">
         Form Builder prototype
       </h1>
+
+      <!--If [some action]
+Then [outcome for users]
+We’ll know this works/is true when:
+[Measurement]-->
+
+<!--
+
+https://fbdocs.herokuapp.com/
+
+https://fb-user-guide-dev.apps.cloud-platform-live-0.k8s.integration.dsd.io/
+
+-->
+
+      <h2 class="govuk-heading-l">Main hypothesises</h2>
+
+      {{ appHypothesis({
+        title: "Hypothesis 1: use the design system",
+        context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the interface are confusing.",
+        if: "we use the MOJ Design System",
+        then: "users will find it easier to use and more accessible",
+        because: "the MOJ Design System is full of high-quality, accessible components that don\'t need to be made from scratch"
+      }) }}
+
+      {{ appHypothesis({
+        title: "Hypothesis 2: expose hidden features",
+        context: "The Form Builder platform was originally made for developers to use by configuring JSON. Users just needed to know the API. As the product changed to focus on non-developers, some of the functionality was exposed in the UI. But lots of the functionality is still only configurable via JSON which is very difficult to use and error prone. This has resulted in the Form Builder platform team supporting form publishers in the creation processm, instead of improving the platform.",
+        if: "we expose the functionality in the UI",
+        then: "users will be able to make forms without support from the platform team",
+        measurements: ["the Form Builder team no longer have to assist publishers in configuring forms"]
+      }) }}
+
+      {{ appHypothesis({
+        title: "Hypothesis 3: provide 1 application",
+        context: "The Form Builder platform consists of several disparate apps. The console lets users create forms and setup an associated Git repo. The editor lets users configure how the form works using components from the GOV.UK Design System. The publisher lets users publish the form online. The Runner is responsible rendering the form to users and collecting the data users enter. The Submitter is responsible for sending the data to an email/endpoint.",
+        if: "we combine Console, Editor and Publisher",
+        then: "users will find it quicker and easier to set up a form, and switch between different forms",
+        measurements: ["the complete functionality of Form Builder is accessible under 1 application"]
+      }) }}
+
+      {{ appHypothesis({
+        title: "Hypothesis 4: make the Form Builder web-based",
+        context: "Before users can set up a form, they need to download the Console and setup Git locally. This is long winded, error prone and requires expertise and support. It also means users have to share Github URLs with each other in order to collaborate on the same form.",
+        if: "we turn the console and editor into a web based application",
+        then: "users will be able to start creating and editing forms more quickly and reduce the dependency on the platform team and the service desk to support installation issues",
+        measurements: ["users don't have to download anything in order to make new forms or edit existing ones"]
+      }) }}
+
+      <h2 class="govuk-heading-xl">Version 1</h2>
 
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="/v1">V1</a></li>

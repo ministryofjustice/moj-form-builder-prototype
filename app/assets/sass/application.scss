@@ -18,6 +18,8 @@ $moj-page-width: 1220px;
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
+@import "../../components/hypothesis/hypothesis";
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .app-preview-link:link,
@@ -29,19 +31,28 @@ $moj-page-width: 1220px;
   // text-decoration: none;
 }
 
+.app-form-panels {
+  margin-top: govuk-spacing(3);
+  border-style: solid;
+  border-width: 1px;
+  border-color: govuk-colour("light-blue");
+}
+
 .app-form-panel {
-  border: 2px solid govuk-colour("light-blue");
-  border-top: 0;
-  padding: govuk-spacing(5) govuk-spacing(4) 0 govuk-spacing(4);
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: govuk-colour("light-blue");
+  padding: govuk-spacing(5) govuk-spacing(4) 1px govuk-spacing(4);
   position: relative;
 }
 
-.app-form-panel:first-of-type {
-  border: 2px solid govuk-colour("light-blue");
+.app-form-panel:nth-child(even) {
+  // background-color: govuk-colour("light-grey");
 }
 
 .app-form-panel:last-of-type {
-  margin-bottom: govuk-spacing(5);
+  margin-bottom: 0;
+  border-bottom: 0;
 }
 
 .app-form-panel__link {
