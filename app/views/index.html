@@ -15,15 +15,15 @@
         Form Builder prototype
       </h1>
 
-      <p class="govuk-body">The Form Builder lets users create, edit and publish forms using the GOV.UK Design System. This prototype has been created in response to the road map sessions we had as a team in August after the focus to create the CFF service in July.</p>
+      <p class="govuk-body">The Form Builder platform lets users create, edit and publish forms using components and patterns from the GOV.UK Design System. This prototype has been created in response to the road map session we had in August after the team's focus to create the CFF service.</p>
 
-      <h2 class="govuk-heading-l">Design hypothesises</h2>
+      <h2 class="govuk-heading-l">Design hypotheses</h2>
 
       <p class="govuk-body">The following overarching hypotheses are useful to understand the reasons for redesigning the Form Builder platform:</p>
 
       {{ appHypothesis({
         title: "Hypothesis 1: use the design system",
-        context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the interface are confusing.",
+        context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the interface are confusing and are inconsistent with the MOJ Design System.",
         if: "we use the MOJ Design System",
         then: "users will find it easier to use and more accessible",
         because: "the MOJ Design System is full of high-quality, accessible components that don\'t need to be made from scratch"
@@ -31,25 +31,25 @@
 
       {{ appHypothesis({
         title: "Hypothesis 2: expose hidden features",
-        context: "The Form Builder platform was originally made for developers to use by configuring JSON. Users just needed to know the API. As the product changed to focus on non-developers, some of the functionality was exposed in the UI. But lots of the functionality is still only configurable via JSON which is very difficult to use and error prone. This has resulted in the Form Builder platform team supporting form publishers in the creation processm, instead of improving the platform.",
-        if: "we expose the functionality in the UI",
-        then: "users will be able to make forms without support from the platform team",
+        context: "The Form Builder platform was originally made for developers to create forms by editing JSON. Users just needed to know the API. The product's mission changed to include non-developers too. This meant exposing some of the functionality as part of the interface. But lots of the functionality remains only possible via JSON configuration which is hard to use and error prone. This has resulted in the Form Builder platform team supporting users in the creation process.",
+        if: "we expose all functionality in the interface",
+        then: "users will be able to make forms quickly and without support from the platform team",
         measurements: ["the Form Builder team no longer have to assist publishers in configuring forms"]
       }) }}
 
       {{ appHypothesis({
-        title: "Hypothesis 3: one application",
-        context: "The Form Builder platform consists of several disparate apps. The console lets users create forms and setup an associated Git repo. The editor lets users configure how the form works using components from the GOV.UK Design System. The publisher lets users publish the form online. The Runner is responsible rendering the form to users and collecting the data users enter. The Submitter is responsible for sending the data to an email/endpoint.",
-        if: "we combine Console, Editor and Publisher",
-        then: "users will find it quicker and easier to set up a form, and switch between different forms",
+        title: "Hypothesis 3: 1 application",
+        context: "The Form Builder platform is made up of several disparate apps. The Console lets users create forms and setup a Git repo. The Editor lets users create pages out of the GOV.UK Design System components. The Publisher lets users deploy the form on the web. This is not very simple to use and means users have to remember what application does what, and how to access each application.",
+        if: "we combine Console, Editor and Publisher into 1 application",
+        then: "users will find the application much simplier to operate without having to think about what application they need to access based on what task they're trying to do.",
         measurements: ["the complete functionality of Form Builder is accessible under 1 application"]
       }) }}
 
       {{ appHypothesis({
         title: "Hypothesis 4: web-based application",
-        context: "Before users can set up a form, they need to download software onto their computer. It's long winded, error prone, requires support from the platform team, doesn't work on all computers and ultimately fails the service standard: ‘make sure everyone can use the service’ and ‘make the service simple to use’ and is inconsistent with other platforms like GOV.UK Pay.",
-        if: "we turn the console and editor into a web based application",
-        then: "the platform will significantly more accessible, easier to use and not require support",
+        context: "Before users can set up a form, they need to download software onto their computer. It's long winded, error prone, requires support from the platform team, doesn't work on all computers and ultimately fails the service standard: ‘make sure everyone can use the service’ and ‘make the service simple to use’. It's also inconsistent with other platforms like GOV.UK Pay.",
+        if: "we turn the Console and Editor into a web based application",
+        then: "the platform will be significantly more accessible, easier to use and not require support",
         measurements: ["users don't have to download anything in order to make new forms or edit existing ones"]
       }) }}
 
