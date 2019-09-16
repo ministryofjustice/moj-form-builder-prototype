@@ -2,25 +2,24 @@
 
 {% block header %}
 
+  {% set serviceLabelHtml %}
+    <!-- <a href="#" class="app-preview-link">Preview</a> -->
+  {% endset %}
+
   {{ mojHeader({
+    organisationName: {
+      href: '/v1'
+    },
     organisationLabel: {
       text: 'Ministry of Justice',
       href: '/v1'
     },
     serviceLabel: {
-      text: 'Form Builder Editor: HMCTS complaints form',
-      href: '/v1'
+      html: 'Form Builder Editor: HMCTS complaints form' + serviceLabelHtml
     },
     navigation: {
       label: 'Account navigation',
-      items: [
-        {
-          text: 'Forms',
-          href: '/v1'
-        },{
-          text: 'Preview',
-          href: '/v1'
-        }, {
+      items: [{
           text: 'Sign out',
           href: '#'
         }
@@ -40,15 +39,29 @@
     items: [
       {
         text: 'Pages',
-        href: '/v1',
+        href: '/v1/pages',
         active: pageId == 'pages'
+      },
+      {
+        text: 'Components',
+        href: '/v1/pages',
+        active: pageId == 'components'
       },
       {
         text: 'Settings',
         href: '/v1',
         active: pageId == 'settings'
+      },
+      {
+        text: 'Error pages',
+        href: '/v1/pages',
+        active: pageId == 'error-pages'
+      },
+      {
+        text: 'Strings',
+        href: '/v1/pages',
+        active: pageId == 'strings'
       }
-    ],
-    searchHtml: searchHtml
+    ]
   }) }}
 {% endblock %}

@@ -19,3 +19,43 @@ $moj-page-width: 1220px;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.app-preview-link:link,
+.app-preview-link:visited {
+  @include govuk-font(19, $weight: normal);
+  color: govuk-colour('light-blue');
+  // border: 2px solid govuk-colour('white');
+  // padding: 5px;
+  // text-decoration: none;
+}
+
+.app-form-panel {
+  border: 2px solid govuk-colour("light-blue");
+  border-top: 0;
+  padding: govuk-spacing(5) govuk-spacing(4) 0 govuk-spacing(4);
+  position: relative;
+}
+
+.app-form-panel:first-of-type {
+  border: 2px solid govuk-colour("light-blue");
+}
+
+.app-form-panel:last-of-type {
+  margin-bottom: govuk-spacing(5);
+}
+
+.app-form-panel__link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.app-form-panel__link:hover,
+.app-form-panel__link:focus,
+.app-form-panel__link:active {
+  background-color: rgba(29, 112, 184, 0.2) !important;
+  border: none;
+  box-shadow: none;
+}
