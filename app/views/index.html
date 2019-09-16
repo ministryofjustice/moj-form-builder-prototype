@@ -15,20 +15,11 @@
         Form Builder prototype
       </h1>
 
-      <!--If [some action]
-Then [outcome for users]
-We’ll know this works/is true when:
-[Measurement]-->
+      <p class="govuk-body">The Form Builder lets users create, edit and publish forms using the GOV.UK Design System. This prototype has been created in response to the road map sessions we had as a team in August after the focus to create the CFF service in July.</p>
 
-<!--
+      <h2 class="govuk-heading-l">Design hypothesises</h2>
 
-https://fbdocs.herokuapp.com/
-
-https://fb-user-guide-dev.apps.cloud-platform-live-0.k8s.integration.dsd.io/
-
--->
-
-      <h2 class="govuk-heading-l">Main hypothesises</h2>
+      <p class="govuk-body">The following overarching hypotheses are useful to understand the reasons for redesigning the Form Builder platform:</p>
 
       {{ appHypothesis({
         title: "Hypothesis 1: use the design system",
@@ -47,7 +38,7 @@ https://fb-user-guide-dev.apps.cloud-platform-live-0.k8s.integration.dsd.io/
       }) }}
 
       {{ appHypothesis({
-        title: "Hypothesis 3: provide 1 application",
+        title: "Hypothesis 3: one application",
         context: "The Form Builder platform consists of several disparate apps. The console lets users create forms and setup an associated Git repo. The editor lets users configure how the form works using components from the GOV.UK Design System. The publisher lets users publish the form online. The Runner is responsible rendering the form to users and collecting the data users enter. The Submitter is responsible for sending the data to an email/endpoint.",
         if: "we combine Console, Editor and Publisher",
         then: "users will find it quicker and easier to set up a form, and switch between different forms",
@@ -55,7 +46,7 @@ https://fb-user-guide-dev.apps.cloud-platform-live-0.k8s.integration.dsd.io/
       }) }}
 
       {{ appHypothesis({
-        title: "Hypothesis 4: make the Form Builder web-based",
+        title: "Hypothesis 4: web-based application",
         context: "Before users can set up a form, they need to download software onto their computer. It's long winded, error prone, requires support from the platform team, doesn't work on all computers and ultimately fails the service standard: ‘make sure everyone can use the service’ and ‘make the service simple to use’ and is inconsistent with other platforms like GOV.UK Pay.",
         if: "we turn the console and editor into a web based application",
         then: "the platform will significantly more accessible, easier to use and not require support",
@@ -71,3 +62,17 @@ https://fb-user-guide-dev.apps.cloud-platform-live-0.k8s.integration.dsd.io/
 </div>
 
 {% endblock %}
+
+
+<!--If [some action]
+Then [outcome for users]
+We’ll know this works/is true when:
+[Measurement]-->
+
+<!--
+
+https://fbdocs.herokuapp.com/
+
+https://fb-user-guide-dev.apps.cloud-platform-live-0.k8s.integration.dsd.io/
+
+-->
