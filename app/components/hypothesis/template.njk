@@ -6,18 +6,18 @@
 <div class="app-hypothesis">
   <h{{level}} class="govuk-heading-m">{{params.title}}</h{{level}}>
 
-  <p class="govuk-body"><strong>Context</strong><br>{{params.context}}</p>
+  <p class="govuk-body"><b>Context</b><br>{{params.context}}</p>
 
   <p class="govuk-body">
-    <strong>If</strong> {{params.if}}<br>
-    <strong>Then</strong> {{params.then}}<br>
+    <b>If</b> {{params.if}}<br>
+    <b>Then</b> {{params.then}}<br>
     {% if params.because %}
-      <strong>Because</strong> {{params.because}}
+      <b>Because</b> {{params.because}}
     {% endif %}
   </p>
 
   {% if params.measurements %}
-    <p class="govuk-body">We’ll know this works/is true when:</p>
+    <p class="govuk-body"><b>We’ll know this works when:</b></p>
     <ul class="govuk-list govuk-list--bullet">
       {% for measurement in params.measurements %}
         <li>{{measurement}}</li>
