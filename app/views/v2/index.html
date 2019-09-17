@@ -1,0 +1,47 @@
+{% extends "./base.html" %}
+
+{% set pageId = 'forms' %}
+
+{% block content %}
+
+  {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Forms</h1>'
+    },
+    items: [{
+      text: 'Create form'
+    }]
+  }) }}
+
+
+{{ govukTable({
+  head: [
+    {
+      text: "Name of form"
+    },
+    {
+      text: "Actions"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: 'Child Funeral Fund<br><span class="govuk-!-font-size-16">https://claim-for-costs-of-a-childs-funeral.form.service.justice.gov.uk/</span>'
+      },
+      {
+        html: '<a href="' + getUrl('/pages') + '">Edit</a> | <a href="' + getUrl('/pages') + '">Deploy</a>'
+      }
+    ],
+    [
+      {
+        html: 'HMCTS complaints form<br><span class="govuk-!-font-size-16">https://hmcts-complaints.form.service.justice.gov.uk/</span>'
+      },
+      {
+        html: '<a href="' + getUrl('/pages') + '">Edit</a> | <a href="' + getUrl('/pages') + '">Deploy</a>'
+      }
+    ]
+  ]
+}) }}
+
+
+{% endblock %}

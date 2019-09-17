@@ -55,11 +55,45 @@
 
       <h2 class="govuk-heading-l">Versions</h2>
 
-      <h2 class="govuk-heading-m">Version 1 (work in progress)</h2>
-      <p class="govuk-body">This prototype uses as much of the GOV.UK and MOJ Design Systems to design a consistent, usable and accessible interface for form publishers. It also aims to provide a more intuitive way to create forms and exposes hidden functionality previously only possible with support and instructions to edit JSON.</p>
+      <h2 class="govuk-heading-m">Version 2</h2>
+      <p class="govuk-body">This prototype uses header and navigation patterns from other platforms like GOV.UK Pay.</p>
+
+      {% set hypothesesTwoHtml %}
+        {{ appHypothesis({
+          title: "Platform navigation",
+          context: "The GOV.UK Design System and MOJ Design System have so far focused on citizen facing transactional sites and internal facing case working system. As such the navigation might not be as appropriate for platforms like Form Builder.",
+          if: "we use the header and navigation structures from platforms like GOV.UK Pay",
+          then: "it will better fit the IA that Form Builder needs"
+        }) }}
+
+        {{ appHypothesis({
+          title: "Group all page types together",
+          context: "In the previous iteration, error pages were separated from standard pages which makes the primary nav longer and consisting of two similar items.",
+          if: "we put error pages inside the pages section",
+          then: "it the navigation will be clearer and the error pages more easy to discover"
+        }) }}
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Hypotheses",
+        html: hypothesesTwoHtml
+      }) }}
+
+      {{govukButton({ text: 'View prototype', href: '/v2'})}}
+
+      <h2 class="govuk-heading-m">Version 1</h2>
+      <p class="govuk-body">This prototype uses the MOJ Design System for navigation and starts to explore ways to show currently hidden features.</p>
+
+      {% set hypothesesTwoHtml %}
+        None yet
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Hypotheses",
+        html: hypothesesTwoHtml
+      }) }}
 
       {{govukButton({ text: 'View prototype', href: '/v1'})}}
-
 
     </div>
 </div>

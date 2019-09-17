@@ -1,0 +1,175 @@
+{% extends "./base.html" %}
+
+{% set pageId = 'edit' %}
+
+{% block content %}
+
+  {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Edit page</h1>'
+    }
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{mojButtonMenu({
+        items: [{
+          text: 'Add component',
+          classes: 'govuk-button--secondary'
+        }, {
+          text: 'Reorder components',
+          classes: 'govuk-button--secondary'
+        }]
+      })}}
+
+      <div class="app-form-panels">
+        <div class="app-form-panel">
+          <h1 class="govuk-heading-xl">Complaint details</h1>
+          <a href="#" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukTextarea({
+            label: {
+              text: "Complaint description",
+              classes: 'govuk-label--m'
+            },
+            id: "event-name",
+            name: "event-name",
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="#" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukRadios({
+            idPrefix: "changed-name",
+            name: "changed-name",
+            fieldset: {
+              legend: {
+                text: "Are you authorised to send this?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                attributes: {
+                  "tabindex": "-1"
+                }
+              },
+              {
+                value: "no",
+                text: "No",
+                attributes: {
+                  "tabindex": "-1"
+                }
+              }
+            ]
+          }) }}
+          <a href="#" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukButton({
+            text: 'Continue',
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="#" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      <h2 class="govuk-heading-m">Page settings</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Page type"
+            },
+            value: {
+              text: "Multi question page"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "URL"
+            },
+            value: {
+              html: "/complaint"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Display"
+            },
+            value: {
+              html: "Conditional"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Steps"
+            },
+            value: {
+              html: "Disabled"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body"><a href="#">View all settings</a></p>
+
+      <!-- <h2 class="govuk-heading-m">Preview page</h2>
+      <p class="govuk-body"><a href="">Preview page (opens in a new window)</a></p> -->
+
+      <h2 class="govuk-heading-m">Danger zone</h2>
+      <p class="govuk-body">This is a danger zone.</p>
+      {{ govukButton({
+        text: "Delete page",
+        classes: "govuk-button--warning"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

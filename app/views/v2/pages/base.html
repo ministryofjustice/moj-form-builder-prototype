@@ -1,0 +1,30 @@
+{% extends "../base.html" %}
+
+{% block header %}
+  {{super()}}
+
+  {{ mojPrimaryNavigation({
+    items: [
+      {
+        text: 'Pages',
+        href: getUrl('/pages'),
+        active: pageId == 'pages'
+      },
+      {
+        text: 'Components',
+        href: getUrl('/components'),
+        active: pageId == 'components'
+      },
+      {
+        text: 'Content',
+        href: getUrl('/strings'),
+        active: pageId == 'strings'
+      },
+      {
+        text: 'Settings',
+        href: getUrl('/settings'),
+        active: pageId == 'settings'
+      }
+    ]
+  }) }}
+{% endblock %}
