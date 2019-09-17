@@ -48,18 +48,18 @@
   {{ mojHeader({
     organisationLabel: {
       text: 'Ministry of Justice',
-      href: '/v1'
+      href: getUrl('/')
     },
     serviceLabel: {
       text: 'Form Builder',
-      href: '/v1'
+      href: getUrl('/')
     },
     navigation: {
       label: 'Account navigation',
       items: [
         {
           text: 'Sign out',
-          href: '#'
+          href: getUrl('/')
         }
       ]
     }
@@ -69,7 +69,7 @@
     items: [
       {
         text: 'Forms',
-        href: '/v1',
+        href: getUrl('/'),
         active: pageId == 'forms'
       }
     ]

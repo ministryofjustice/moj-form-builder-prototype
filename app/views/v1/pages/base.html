@@ -8,11 +8,11 @@
 
   {{ mojHeader({
     organisationName: {
-      href: '/v1'
+      href: getUrl('/')
     },
     organisationLabel: {
       text: 'Ministry of Justice',
-      href: '/v1'
+      href: getUrl('/')
     },
     serviceLabel: {
       html: 'Form Builder Editor: HMCTS complaints form' + serviceLabelHtml
@@ -21,7 +21,7 @@
       label: 'Account navigation',
       items: [{
           text: 'Sign out',
-          href: '#'
+          href: getUrl('/')
         }
       ]
     }
@@ -39,27 +39,27 @@
     items: [
       {
         text: 'Pages',
-        href: '/v1/pages',
+        href: getUrl('/pages'),
         active: pageId == 'pages'
       },
       {
         text: 'Components',
-        href: '/v1/pages',
+        href: getUrl('/components'),
         active: pageId == 'components'
       },
       {
         text: 'Settings',
-        href: '/v1',
+        href: getUrl('/settings'),
         active: pageId == 'settings'
       },
       {
         text: 'Error pages',
-        href: '/v1/pages',
+        href: getUrl('/error-pages'),
         active: pageId == 'error-pages'
       },
       {
         text: 'Strings',
-        href: '/v1/pages',
+        href: getUrl('/strings'),
         active: pageId == 'strings'
       }
     ]
