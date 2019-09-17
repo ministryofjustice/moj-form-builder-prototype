@@ -75,3 +75,24 @@ $moj-page-width: 1220px;
   background-color: rgba(29, 112, 184, 0.15) !important;
   box-shadow: none;
 }
+
+.moj-primary-navigation__identity {
+  text-align: left;
+  display: inline-block;
+}
+
+.moj-primary-navigation__identity-title {
+  @include govuk-font($size: 16);
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.moj-primary-navigation__nav {
+  text-align: right;
+}
+
+.moj-primary-navigation {
+  border-bottom: 1px solid govuk-colour('mid-grey');
+  background: white;
+}

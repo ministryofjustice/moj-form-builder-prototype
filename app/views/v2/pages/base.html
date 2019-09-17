@@ -3,7 +3,7 @@
 {% block header %}
   {{super()}}
 
-  {{ mojPrimaryNavigation({
+  <!-- {{ mojPrimaryNavigation({
     items: [
       {
         text: 'Pages',
@@ -26,5 +26,44 @@
         active: pageId == 'settings'
       }
     ]
-  }) }}
+  }) }} -->
+
+  <div class="moj-primary-navigation">
+
+    <div class="moj-primary-navigation__container">
+
+      <div class="moj-primary-navigation__identity">
+        <span class="moj-primary-navigation__identity-title">Complaints form</span>
+      </div>
+
+      <div class="moj-primary-navigation__nav">
+
+        <nav class="moj-primary-navigationn" aria-label="Primary navigation">
+
+          <ul class="moj-primary-navigation__list">
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="{{getUrl('/pages')}}">Summary</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" aria-current="page" href="{{getUrl('/pages')}}">Pages</a>
+            </li>
+
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="{{getUrl('/components')}}">Components</a>
+            </li>
+
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="#3">Content</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="#3">Settings</a>
+            </li>
+          </ul>
+
+        </nav>
+
+      </div>
+    </div>
+
+    </div>
 {% endblock %}
