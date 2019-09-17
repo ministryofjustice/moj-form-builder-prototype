@@ -66,7 +66,12 @@ $moj-page-width: 1220px;
 .app-form-panel__link:hover,
 .app-form-panel__link:focus,
 .app-form-panel__link:active {
-  background-color: rgba(29, 112, 184, 0.2) !important;
+  background-color: rgba(29, 112, 184, 0.15) !important;
   border: none;
+  box-shadow: none;
+}
+
+.moj-identity-bar {
+  background-color: rgba(29, 112, 184, 0.15) !important;
   box-shadow: none;
 }

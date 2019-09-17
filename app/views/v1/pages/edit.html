@@ -2,6 +2,13 @@
 
 {% set pageId = 'edit' %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: getUrl('/pages')
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   {{ mojPageHeaderActions({
@@ -160,8 +167,8 @@
 
       <p class="govuk-body"><a href="#">View all settings</a></p>
 
-      <h2 class="govuk-heading-m">Preview page</h2>
-      <p class="govuk-body"><a href="">Preview page (opens in a new window)</a></p>
+      <!-- <h2 class="govuk-heading-m">Preview page</h2>
+      <p class="govuk-body"><a href="">Preview page (opens in a new window)</a></p> -->
 
       <h2 class="govuk-heading-m">Danger zone</h2>
       <p class="govuk-body">This is a danger zone.</p>

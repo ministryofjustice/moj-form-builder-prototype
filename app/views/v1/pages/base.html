@@ -1,67 +1,25 @@
 {% extends "../base.html" %}
 
 {% block header %}
+  {{super()}}
 
-  {% set serviceLabelHtml %}
-    <!-- <a href="#" class="app-preview-link">Preview</a> -->
-  {% endset %}
-
-  {{ mojHeader({
-    organisationName: {
-      href: getUrl('/')
+  {{ mojIdentityBar({
+    title: {
+    html: "<b>HMCTS complaints form</b>"
     },
-    organisationLabel: {
-      text: 'Ministry of Justice',
-      href: getUrl('/')
-    },
-    serviceLabel: {
-      html: 'Form Builder Editor: HMCTS complaints form' + serviceLabelHtml
-    },
-    navigation: {
-      label: 'Account navigation',
-      items: [{
-          text: 'Sign out',
-          href: getUrl('/')
-        }
-      ]
-    }
-  }) }}
-
-  {% set searchHtml %}
-    {{govukButton({
-      text: 'Preview',
-      classes: 'govuk-!-margin-bottom-0 app-form-preview-button'
-    })}}
-  {% endset %}
-
-  {{ mojPrimaryNavigation({
-    label: 'Primary navigation',
+    menus: [{
     items: [
       {
-        text: 'Pages',
-        href: getUrl('/pages'),
-        active: pageId == 'pages'
+        text: "Preview",
+        href: "#",
+        classes: "govuk-button--secondary"
       },
       {
-        text: 'Components',
-        href: getUrl('/components'),
-        active: pageId == 'components'
-      },
-      {
-        text: 'Settings',
-        href: getUrl('/settings'),
-        active: pageId == 'settings'
-      },
-      {
-        text: 'Error pages',
-        href: getUrl('/error-pages'),
-        active: pageId == 'error-pages'
-      },
-      {
-        text: 'Strings',
-        href: getUrl('/strings'),
-        active: pageId == 'strings'
+        text: "Deploy",
+        href: "#",
+        classes: "govuk-button--secondary"
       }
     ]
+    }]
   }) }}
 {% endblock %}
