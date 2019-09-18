@@ -17,43 +17,51 @@
 
       <p class="govuk-body">The Form Builder platform lets users create, edit and publish forms using components and patterns from the GOV.UK Design System. This prototype has been created in response to the road map session we had in August after the team's focus to create the CFF service.</p>
 
-      <h2 class="govuk-heading-l">Design hypotheses</h2>
+      <h2 class="govuk-heading-l">Main Hypotheses</h2>
 
-      <p class="govuk-body">The following overarching hypotheses are useful to understand the reasons for redesigning the Form Builder platform:</p>
+      <p class="govuk-body">The following hypotheses are useful to understand the reasons for redesigning the Form Builder platform:</p>
 
-      {{ appHypothesis({
-        title: "Hypothesis 1: use the design system",
-        context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the interface are confusing and are inconsistent with the MOJ Design System.",
-        if: "we use the MOJ Design System",
-        then: "users will find it easier to use and more accessible",
-        because: "the MOJ Design System is full of high-quality, accessible components that don\'t need to be made from scratch"
+      {% set mainHypothesesHtml %}
+
+        {{ appHypothesis({
+          title: "Hypothesis 1: use the design system",
+          context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the interface are confusing and are inconsistent with the MOJ Design System.",
+          if: "we use the MOJ Design System",
+          then: "users will find it easier to use and more accessible",
+          because: "the MOJ Design System is full of high-quality, accessible components that don\'t need to be made from scratch"
+        }) }}
+
+        {{ appHypothesis({
+          title: "Hypothesis 2: expose hidden features",
+          context: "The Form Builder platform was originally made for developers to create forms by editing JSON. Users just needed to know the API. The product's mission changed to include non-developers too. This meant exposing some of the functionality as part of the interface. But lots of the functionality remains only possible via JSON configuration which is hard to use and error prone. This has resulted in the Form Builder platform team supporting users in the creation process.",
+          if: "we expose all functionality in the interface",
+          then: "users will be able to make forms quickly and without support from the platform team",
+          measurements: ["the Form Builder team no longer have to assist publishers in configuring forms"]
+        }) }}
+
+        {{ appHypothesis({
+          title: "Hypothesis 3: 1 application",
+          context: "The Form Builder platform is made up of several disparate apps. The Console lets users create forms and setup a Git repo. The Editor lets users create pages out of the GOV.UK Design System components. The Publisher lets users deploy the form on the web. This is not very simple to use and means users have to remember what application does what, and how to access each application.",
+          if: "we combine Console, Editor and Publisher into 1 application",
+          then: "users will find the application much simplier to operate without having to think about what application they need to access based on what task they're trying to do.",
+          measurements: ["the complete functionality of Form Builder is accessible under 1 application"]
+        }) }}
+
+        {{ appHypothesis({
+          title: "Hypothesis 4: web-based application",
+          context: "Before users can set up a form, they need to download software onto their computer. It's long winded, error prone, requires support from the platform team, doesn't work on all computers and ultimately fails the service standard: ‘make sure everyone can use the service’ and ‘make the service simple to use’. It's also inconsistent with other platforms like GOV.UK Pay.",
+          if: "we turn the Console and Editor into a web based application",
+          then: "the platform will be significantly more accessible, easier to use and not require support",
+          measurements: ["users don't have to download anything in order to make new forms or edit existing ones"]
+        }) }}
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Hypotheses",
+        html: mainHypothesesHtml
       }) }}
 
-      {{ appHypothesis({
-        title: "Hypothesis 2: expose hidden features",
-        context: "The Form Builder platform was originally made for developers to create forms by editing JSON. Users just needed to know the API. The product's mission changed to include non-developers too. This meant exposing some of the functionality as part of the interface. But lots of the functionality remains only possible via JSON configuration which is hard to use and error prone. This has resulted in the Form Builder platform team supporting users in the creation process.",
-        if: "we expose all functionality in the interface",
-        then: "users will be able to make forms quickly and without support from the platform team",
-        measurements: ["the Form Builder team no longer have to assist publishers in configuring forms"]
-      }) }}
-
-      {{ appHypothesis({
-        title: "Hypothesis 3: 1 application",
-        context: "The Form Builder platform is made up of several disparate apps. The Console lets users create forms and setup a Git repo. The Editor lets users create pages out of the GOV.UK Design System components. The Publisher lets users deploy the form on the web. This is not very simple to use and means users have to remember what application does what, and how to access each application.",
-        if: "we combine Console, Editor and Publisher into 1 application",
-        then: "users will find the application much simplier to operate without having to think about what application they need to access based on what task they're trying to do.",
-        measurements: ["the complete functionality of Form Builder is accessible under 1 application"]
-      }) }}
-
-      {{ appHypothesis({
-        title: "Hypothesis 4: web-based application",
-        context: "Before users can set up a form, they need to download software onto their computer. It's long winded, error prone, requires support from the platform team, doesn't work on all computers and ultimately fails the service standard: ‘make sure everyone can use the service’ and ‘make the service simple to use’. It's also inconsistent with other platforms like GOV.UK Pay.",
-        if: "we turn the Console and Editor into a web based application",
-        then: "the platform will be significantly more accessible, easier to use and not require support",
-        measurements: ["users don't have to download anything in order to make new forms or edit existing ones"]
-      }) }}
-
-      <h2 class="govuk-heading-l">Versions</h2>
+      <h2 class="govuk-heading-l">Explorations</h2>
 
       <h2 class="govuk-heading-m">Version 2</h2>
       <p class="govuk-body">This prototype uses header and navigation patterns from other platforms like GOV.UK Pay.</p>
@@ -71,6 +79,13 @@
           context: "In the previous iteration, error pages were separated from standard pages which makes the primary nav longer and consisting of two similar items.",
           if: "we put error pages inside the pages section",
           then: "it the navigation will be clearer and the error pages more easy to discover"
+        }) }}
+
+        {{ appHypothesis({
+          title: "Add summary page",
+          context: "Landing on the pages page is a bit assumes that all users who are working on the form want to edit pages when they could be looking for other things like metrics, global settings, and deployment related information.",
+          if: "we add a summary page",
+          then: "we can surface the most pertinent information to all users regardless of the task they are looking to proceed"
         }) }}
       {% endset %}
 

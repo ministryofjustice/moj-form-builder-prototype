@@ -35,6 +35,7 @@
 {%- from "moj/components/identity-bar/macro.njk" import mojIdentityBar -%}
 {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 {%- from "moj/components/search/macro.njk" import mojSearch -%}
+{%- from "moj/components/badge/macro.njk" import mojBadge -%}
 
 
 
@@ -50,7 +51,7 @@
   {{ mojHeader({
     organisationLabel: {
       text: 'Ministry of Justice',
-      href: getUrl('/')
+      href: "/"
     },
     serviceLabel: {
       text: 'Form Builder',
@@ -61,10 +62,15 @@
       items: [
         {
           text: 'Your forms',
-          href: getUrl('/')
+          href: getUrl('/'),
+          active: pageId == 'forms'
         },
         {
           text: 'Your account',
+          href: getUrl('/')
+        },
+        {
+          text: 'Documentation',
           href: getUrl('/')
         },
         {
@@ -98,17 +104,6 @@
 {% block bodyEnd %}
   {% block scripts %}
     {% include "includes/scripts.html" %}
-    <script>
-      new MOJFrontend.SearchToggle({
-        toggleButton: {
-          container: $('.moj-search-toggle__toggle'),
-          text: 'Search'
-        },
-        search: {
-          container: $('.moj-search')
-        }
-      });
-    </script>
     {% block pageScripts %}{% endblock %}
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
