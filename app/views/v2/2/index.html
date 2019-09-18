@@ -6,6 +6,270 @@
 
   <h1 class="govuk-heading-xl">Summary</h1>
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Pages</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Start page"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your email address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your name"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your complaint"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+      <p class="govuk-body"><a href="#">Browse pages</a></p>
 
+      <h2 class="govuk-heading-l">Settings</h2>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "HMCTS complaints form"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Github repo"
+              },
+              value: {
+                text: "https://github.com/ministryofjustice/cica-same-roof-contact.git"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Contact information"
+              },
+              value: {
+                html: "72 Guild Street<br>London<br>SE23 6FH"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "contact information"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        <p class="govuk-body"><a href="#">Browse settings</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+
+
+        <h2 class="govuk-heading-l">Status</h2>
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Production"
+              },
+              value: {
+                html: "<b>201</b><br>19 July 2019 at 12:01pm"
+              }
+            },
+            {
+              key: {
+                text: "Staging"
+              },
+              value: {
+                html: "<b>201</b><br>19 July 2019 at 12:01pm"
+              }
+            },
+            {
+              key: {
+                text: "Development"
+              },
+              value: {
+                html: "<b>201</b><br>19 July 2019 at 12:01pm"
+              }
+            }
+          ]
+        }) }}
+
+        <p class="govuk-body"><a href="#">Browse statuses</a></p>
+
+        <!-- {{ govukTable({
+          head: [
+            {
+              text: "Environment"
+            },
+            {
+              text: "URL"
+            },
+            {
+              text: "Status code",
+              format: "numeric"
+            },
+            {
+              text: "Checked"
+            },
+            {
+              text: "Actions"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "Development"
+              },
+              {
+                text: "https://claim-for-costs-of-a-childs-funeral.dev.form.service.justice.gov.uk/"
+              },
+              {
+                text: "200"
+              },
+              {
+                text: "19 July 2019 12:21pm"
+              },
+              {
+                html: '<a href="#">Check status</a>'
+              }
+            ],
+            [
+              {
+                text: "Staging"
+              },
+              {
+                text: "https://claim-for-costs-of-a-childs-funeral.staging.form.service.justice.gov.uk/"
+              },
+              {
+                text: "200"
+              },
+              {
+                text: "19 July 2019 12:21pm"
+              },
+              {
+                html: '<a href="#">Check status</a>'
+              }
+            ],
+            [
+              {
+                text: "Production"
+              },
+              {
+                text: "https://claim-for-costs-of-a-childs-funeral.production.form.service.justice.gov.uk/"
+              },
+              {
+                text: "200"
+              },
+              {
+                text: "20 July 2019 12:21pm"
+              },
+              {
+                html: '<a href="#">Check status</a>'
+              }
+            ]
+          ]
+        }) }} -->
+
+
+      <!-- Status<br>
+      <br><br>
+
+      Config params (add edit delete) for each environment
+
+      <br><br>
+
+      Teams that have permission to change deployment related things
+
+      <br><br>
+
+      Deployments (env, commit sha, time of completion, status, history DEPLOY UN DEPLOY) -->
+
+    </div>
+  </div>
 
 {% endblock %}
