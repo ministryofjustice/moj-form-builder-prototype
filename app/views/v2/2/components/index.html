@@ -8,17 +8,14 @@
     heading: {
       html: '<h1 class="govuk-heading-xl">Components</h1>'
     },
-    items: [{
-      text: 'Create component'
-    }]
+    items: []
   }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <p class="govuk-body-l">You can create a reusable component for use across multiple pages, like a contact panel.</p>
 
-      <p class="govuk-body">You have no custom components yet.</p>
-
+      {{govukButton({ text: 'Create component' })}}
     </div>
   </div>
 
