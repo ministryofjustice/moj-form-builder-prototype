@@ -13,77 +13,41 @@
         rows: [
           {
             key: {
-              text: "Start page"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
+              html: '<a href="'+getUrl('/2/pages/show')+'">Start page</a>'
             }
           },
           {
             key: {
-              text: "Your email address"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date of birth"
-                }
-              ]
+              html: '<a href="'+getUrl('/2/pages/show')+'">Your email address</a>'
             }
           },
           {
             key: {
-              text: "Your name"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "contact information"
-                }
-              ]
+              html: '<a href="'+getUrl('/2/pages/show')+'">Your name</a>'
             }
           },
           {
             key: {
-              text: "Your complaint"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "contact information"
-                }
-              ]
+              html: '<a href="'+getUrl('/2/pages/show')+'">Your complaint</a>'
             }
           },
           {
             key: {
-              text: "Your address"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "contact information"
-                }
-              ]
+              html: '<a href="'+getUrl('/2/pages/show')+'">Your address</a>'
+            }
+          },
+          {
+            key: {
+              html: '<a href="'+getUrl('/2/pages/show')+'">Check answers</a>'
+            }
+          },
+          {
+            key: {
+              html: '<a href="'+getUrl('/2/pages/show')+'">Confirmation page</a>'
             }
           }
         ]
       }) }}
-      <p class="govuk-body"><a href="#">Browse pages</a></p>
 
       <h2 class="govuk-heading-l">Settings</h2>
         {{ govukSummaryList({

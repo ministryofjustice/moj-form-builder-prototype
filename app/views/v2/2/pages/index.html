@@ -53,9 +53,20 @@
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="{{getUrl('/2/pages/show')}}">Check answers</a></h2>
     <p class="govuk-body-s">/check-answers</p>
   </div>
-  <div class="app-form-item">
+  <div class="app-form-item app-form-item--last">
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="{{getUrl('/2/pages/show')}}">Confirmation page</a></h2>
     <p class="govuk-body-s">/confirmation</p>
+  </div>
+
+  <h2 class="govuk-heading-l">Error pages</h2>
+
+  <div class="app-form-item app-form-item--first">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="{{getUrl('/2/pages/show')}}">Service unavailable</a></h2>
+    <p class="govuk-body-s">500</p>
+  </div>
+  <div class="app-form-item">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1"><a href="{{getUrl('/2/pages/show')}}">Page not found</a></h2>
+    <p class="govuk-body-s">404</p>
   </div>
 
 {% endblock %}

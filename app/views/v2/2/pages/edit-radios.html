@@ -72,6 +72,19 @@
         name: "summary-hint"
       }) }}
 
+      {{ govukInput({
+        label: {
+          text: "Legend classes",
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          text: "These are the HTML classes that are added to the legend. Leave a space between each one."
+        },
+        id: "legend-classes",
+        name: "legend-classes",
+        value: "govuk-fieldset__legend--m"
+      }) }}
+
       {{ govukButton({ text: 'Save' }) }}
 
       <div class="moj-add-another">
