@@ -100,6 +100,7 @@ $moj-page-width: 1220px;
 .app-form-item {
   border-bottom: 1px solid govuk-colour('mid-grey');
   padding-top: govuk-spacing(4);
+  position: relative;
 }
 
 .app-form-item--first {
@@ -108,4 +109,10 @@ $moj-page-width: 1220px;
 
 .app-form-item--last {
   margin-bottom: govuk-spacing(6);
+}
+
+.app-button--deploy {
+  position: absolute;
+  top: 20px;
+  right: 0;
 }

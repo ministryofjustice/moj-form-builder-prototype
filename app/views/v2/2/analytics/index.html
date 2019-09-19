@@ -1,0 +1,20 @@
+{% extends "../layout.html" %}
+
+{% set pageId = 'deploy' %}
+
+{% block content %}
+
+  {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Analytics</h1>'
+    },
+    items: []
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">A place to see how the form is performing and maybe set up analytics?</p>
+    </div>
+  </div>
+
+{% endblock %}
