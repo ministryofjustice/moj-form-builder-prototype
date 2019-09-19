@@ -76,110 +76,200 @@
 
       <div class="moj-add-another">
 
-      <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Options</h1>
+        <h2 class="govuk-heading-l moj-add-another__heading" tabindex="-1">Options</h1>
 
-      <form method="post">
+        <form method="post">
 
-      {% call govukFieldset({
-        classes: 'moj-add-another__item',
-        legend: {
-          text: 'Option 1',
-          classes: 'moj-add-another__title govuk-fieldset__legend--m'
-        }
-      }) %}
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
+            legend: {
+              text: 'Option 1',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m'
+            }
+          }) %}
 
-      {{ govukInput({
-        id: 'option[0][label]',
-        name: 'option[0][label]',
-        label: {
-          html: 'Label',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        value: "Yes",
-        attributes: {
-          'data-name': 'option[%index%][label]',
-          'data-id': 'option[%index%][label]'
-        }
-      }) }}
+          {{ govukInput({
+            id: 'option[0][label]',
+            name: 'option[0][label]',
+            label: {
+              html: 'Label',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            value: "Yes",
+            attributes: {
+              'data-name': 'option[%index%][label]',
+              'data-id': 'option[%index%][label]'
+            }
+          }) }}
 
-      {{ govukInput({
-        id: 'option[0][value]',
-        name: 'option[0][value]',
-        label: {
-          html: 'Value',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        value: "yes",
-        attributes: {
-          'data-name': 'option[%index%][value]',
-          'data-id': 'option[%index%][value]'
-        }
-      }) }}
+          {{ govukInput({
+            id: 'option[0][value]',
+            name: 'option[0][value]',
+            label: {
+              html: 'Value',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            value: "yes",
+            attributes: {
+              'data-name': 'option[%index%][value]',
+              'data-id': 'option[%index%][value]'
+            }
+          }) }}
 
-      <p class="govuk-body"><a href="#">Additional properties</a></p>
+          <p class="govuk-body"><a href="#">Additional properties</a></p>
 
-      <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">Remove</button>
-      {% endcall %}
+          <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">Remove</button>
+          {% endcall %}
 
-      {% call govukFieldset({
-        classes: 'moj-add-another__item',
-        legend: {
-          text: 'Option 2',
-          classes: 'moj-add-another__title govuk-fieldset__legend--m'
-        }
-      }) %}
+          {% call govukFieldset({
+            classes: 'moj-add-another__item',
+            legend: {
+              text: 'Option 2',
+              classes: 'moj-add-another__title govuk-fieldset__legend--m'
+            }
+          }) %}
 
-      {{ govukInput({
-        id: 'option[1][label]',
-        name: 'option[1][label]',
-        label: {
-          html: 'Label',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        value: "No",
-        attributes: {
-          'data-name': 'option[%index%][label]',
-          'data-id': 'option[%index%][label]'
-        }
-      }) }}
+          {{ govukInput({
+            id: 'option[1][label]',
+            name: 'option[1][label]',
+            label: {
+              html: 'Label',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            value: "No",
+            attributes: {
+              'data-name': 'option[%index%][label]',
+              'data-id': 'option[%index%][label]'
+            }
+          }) }}
 
-      {{ govukInput({
-        id: 'option[1][value]',
-        name: 'option[1][value]',
-        label: {
-          html: 'Value',
-          classes: 'govuk-!-font-weight-bold'
-        },
-        value: "no",
-        attributes: {
-          'data-name': 'option[%index%][value]',
-          'data-id': 'option[%index%][value]'
-        }
-      }) }}
+          {{ govukInput({
+            id: 'option[1][value]',
+            name: 'option[1][value]',
+            label: {
+              html: 'Value',
+              classes: 'govuk-!-font-weight-bold'
+            },
+            value: "no",
+            attributes: {
+              'data-name': 'option[%index%][value]',
+              'data-id': 'option[%index%][value]'
+            }
+          }) }}
 
-      <p class="govuk-body"><a href="#">Additional properties</a></p>
+          <p class="govuk-body"><a href="#">Additional properties</a></p>
 
-      <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">Remove</button>
+          <button type="button" class="govuk-button govuk-button--secondary moj-add-another__remove-button">Remove</button>
 
-      {% endcall %}
+          {% endcall %}
 
-      <div class="moj-button-action">
-        {{ govukButton({
-          text: 'Add another option',
-          classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
-        }) }}
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Add another option',
+              classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+            }) }}
+          </div>
+
+          <div class="moj-button-action">
+            {{ govukButton({
+              text: 'Save'
+            }) }}
+          </div>
+
+        </form>
+
       </div>
 
-      <div class="moj-button-action">
-        {{ govukButton({
-          text: 'Save'
-        }) }}
-      </div>
+      <form>
+        {% set yesHtml %}
+          {{ govukInput({
+            id: "error-message",
+            name: "error-message",
+            type: "text",
+            label: {
+              text: "Error message"
+            },
+            value: "Select yes, if you're authorised to send this"
+          }) }}
+        {% endset -%}
 
+        {{ govukRadios({
+          idPrefix: "required",
+          name: "required",
+          fieldset: {
+            legend: {
+              text: "Is this question required?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: yesHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+        {{ govukButton({ text: 'Save' }) }}
       </form>
 
-      </div>
+      <form>
+          {% set repeatableYesHtml %}
+            {{ govukInput({
+              id: "min",
+              name: "min",
+              type: "text",
+              label: {
+                text: "Minimum"
+              },
+              classes: "govuk-input--width-10",
+              value: "1"
+            }) }}
+            {{ govukInput({
+              id: "min",
+              name: "min",
+              type: "text",
+              label: {
+                text: "Maximum"
+              },
+              classes: "govuk-input--width-10",
+              value: "1"
+            }) }}
+          {% endset -%}
 
+          {{ govukRadios({
+            idPrefix: "repeatable",
+            name: "repeatable",
+            fieldset: {
+              legend: {
+                text: "Is this question repeatable?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                  html: repeatableYesHtml
+                }
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+          {{ govukButton({ text: 'Save' }) }}
+        </form>
 
 
     </div>
