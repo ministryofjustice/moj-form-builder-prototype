@@ -28,14 +28,17 @@
             </li>
 
             <li class="moj-primary-navigation__item">
-              <a class="moj-primary-navigation__link" {% if pageId == 'content' %} aria-current="page" {% endif %} href="#3">Content</a>
+              <a class="moj-primary-navigation__link" {% if pageId == 'content' %} aria-current="page" {% endif %} href="{{getUrl('/2/content')}}">Content</a>
             </li>
             <li class="moj-primary-navigation__item">
-              <a class="moj-primary-navigation__link" {% if pageId == 'settings' %} aria-current="page" {% endif %} href="#3">Settings</a>
+              <a class="moj-primary-navigation__link" {% if pageId == 'settings' %} aria-current="page" {% endif %} href="{{getUrl('/2/settings')}}">Settings</a>
             </li>
             <li class="moj-primary-navigation__item">
-                <a class="moj-primary-navigation__link" {% if pageId == 'settings' %} aria-current="page" {% endif %} href="#3">Deployment</a>
-              </li>
+              <a class="moj-primary-navigation__link" {% if pageId == 'settings' %} aria-current="page" {% endif %} href="{{getUrl('/2/deploy')}}">Deploy</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'analytics' %} aria-current="page" {% endif %} href="{{getUrl('/2/analytics')}}">Analytics</a>
+            </li>
           </ul>
 
         </nav>
