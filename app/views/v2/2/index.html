@@ -118,107 +118,30 @@
           rows: [
             {
               key: {
-                text: "Production"
+                text: "Preview"
               },
               value: {
-                html: "<b>201</b><br>19 July 2019 at 12:01pm"
+                html: mojBadge({ text: 'Running', classes: 'moj-badge--green'})
               }
             },
             {
               key: {
-                text: "Staging"
+                text: "Test"
               },
               value: {
-                html: "<b>201</b><br>19 July 2019 at 12:01pm"
+                html: mojBadge({ text: 'Down', classes: 'moj-badge--red'})
               }
             },
             {
               key: {
-                text: "Development"
+                text: "Live"
               },
               value: {
-                html: "<b>201</b><br>19 July 2019 at 12:01pm"
+                html: mojBadge({ text: 'Publishing'})
               }
             }
           ]
         }) }}
-
-        <p class="govuk-body"><a href="#">Browse statuses</a></p>
-
-        <!-- {{ govukTable({
-          head: [
-            {
-              text: "Environment"
-            },
-            {
-              text: "URL"
-            },
-            {
-              text: "Status code",
-              format: "numeric"
-            },
-            {
-              text: "Checked"
-            },
-            {
-              text: "Actions"
-            }
-          ],
-          rows: [
-            [
-              {
-                text: "Development"
-              },
-              {
-                text: "https://claim-for-costs-of-a-childs-funeral.dev.form.service.justice.gov.uk/"
-              },
-              {
-                text: "200"
-              },
-              {
-                text: "19 July 2019 12:21pm"
-              },
-              {
-                html: '<a href="#">Check status</a>'
-              }
-            ],
-            [
-              {
-                text: "Staging"
-              },
-              {
-                text: "https://claim-for-costs-of-a-childs-funeral.staging.form.service.justice.gov.uk/"
-              },
-              {
-                text: "200"
-              },
-              {
-                text: "19 July 2019 12:21pm"
-              },
-              {
-                html: '<a href="#">Check status</a>'
-              }
-            ],
-            [
-              {
-                text: "Production"
-              },
-              {
-                text: "https://claim-for-costs-of-a-childs-funeral.production.form.service.justice.gov.uk/"
-              },
-              {
-                text: "200"
-              },
-              {
-                text: "20 July 2019 12:21pm"
-              },
-              {
-                html: '<a href="#">Check status</a>'
-              }
-            ]
-          ]
-        }) }} -->
-
 
       <!-- Status<br>
       <br><br>
