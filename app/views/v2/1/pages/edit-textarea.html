@@ -184,6 +184,39 @@
           {{ govukButton({ text: 'Save' }) }}
         </form>
 
+        <form>
+            {% set conditionalYesHtml %}
+              Options for this
+            {% endset -%}
+
+            {{ govukRadios({
+              idPrefix: "conditional",
+              name: "conditional",
+              fieldset: {
+                legend: {
+                  text: "Is this question conditionally displayed?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  conditional: {
+                    html: conditionalYesHtml
+                  }
+                },
+                {
+                  value: "no",
+                  text: "No",
+                  checked: true
+                }
+              ]
+            }) }}
+            {{ govukButton({ text: 'Save' }) }}
+          </form>
+
 
     </div>
   </div>
