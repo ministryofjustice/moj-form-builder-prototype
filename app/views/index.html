@@ -87,6 +87,13 @@
           if: "we add a summary page",
           then: "we can surface the most pertinent information to all users regardless of the task they are looking to proceed"
         }) }}
+
+        {{ appHypothesis({
+          title: "Vertical page flow view",
+          context: "Currently the flow view is shown horizontally causes users to scroll unconventionally",
+          if: "we add show the flow view vertically",
+          then: "users can scroll conventionally down the page to see more of the pages"
+        }) }}
       {% endset %}
 
       {{ govukDetails({
@@ -98,15 +105,6 @@
 
       <h2 class="govuk-heading-m">Version 1</h2>
       <p class="govuk-body">This prototype uses the MOJ Design System for navigation and starts to explore ways to show currently hidden features.</p>
-
-      {% set hypothesesTwoHtml %}
-        None yet
-      {% endset %}
-
-      {{ govukDetails({
-        summaryText: "Hypotheses",
-        html: hypothesesTwoHtml
-      }) }}
 
       {{govukButton({ text: 'View prototype', href: '/v1'})}}
 
