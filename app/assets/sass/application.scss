@@ -116,3 +116,31 @@ $moj-page-width: 1220px;
   top: 20px;
   right: 0;
 }
+
+
+.app-flow-item {
+  a {
+    text-decoration: none;
+    border: 2px solid govuk-colour('black');
+    width: 200px;
+    display: block;
+  }
+}
+
+.app-flow-item__thumb {
+  background-color: govuk-colour('light-grey');
+  border-bottom: 2px solid govuk-colour('black');
+  height: 120px;
+}
+
+.app-flow-item__name {
+  padding: govuk-spacing(1);
+}
+
+.app-flow-connector {
+  width: 2px;
+  display: block;
+  background: govuk-colour('black');
+  height: 100px;
+  margin-left: 99px;
+}
