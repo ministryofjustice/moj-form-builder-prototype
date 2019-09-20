@@ -33,13 +33,13 @@
               text: "Complaint description",
               classes: 'govuk-label--m'
             },
-            id: "event-name",
-            name: "event-name",
+            id: "description",
+            name: "description",
             attributes: {
               "tabindex": "-1"
             }
           }) }}
-          <a href="#" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+          <a href="{{getUrl('/1/pages/edit-textarea')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change description component</span></a>
         </div>
         <div class="app-form-panel">
           {{ govukRadios({
