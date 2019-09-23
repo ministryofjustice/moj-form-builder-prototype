@@ -66,7 +66,7 @@
       <h2 class="govuk-heading-m">Version 3</h2>
       <p class="govuk-body">Cleaner, more consistent handling of complex page and component properties like conditional display.</p>
 
-      {% set hypothesesTwoHtml %}
+      {% set hypothesesThreeHtml %}
         {{ appHypothesis({
           title: "Page and component props",
           context: "The previous exploration exposed secondary component props like repeatability as a form at the bottom of the edit screen. This meant there's lots of forms and (primary) buttons all in one column. It also doesn't work well for sub flows that require multiple steps to configure",
@@ -79,6 +79,13 @@
           context: "This prototoype is a vision of what we want FB to be. This link is a hangover from the exisitng form builder which is aimed at developers. See main hypothesis 2 for more information.",
           if: "we remove this backdoor",
           then: "the interface will have to do the hardwork so users don't have to and we don't have an oddly labelled action."
+        }) }}
+
+        {{ appHypothesis({
+          title: "Steps enabled for all pages",
+          context: "Currently, the form builder lets users enable steps on a page by page basis. Users have to open a page, then enable steps which feels unnecessary",
+          if: "we enable steps on all pages by default",
+          then: "then users aren't exposed to the idea of steps until they create a new page, whereby they just add the new page as a step of the main flow or otherwise."
         }) }}
       {% endset %}
 
