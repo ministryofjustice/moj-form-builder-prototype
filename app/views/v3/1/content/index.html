@@ -1,0 +1,196 @@
+{% extends "../layout.html" %}
+
+{% set pageId = 'content' %}
+
+{% block content %}
+
+{{ mojPageHeaderActions({
+  heading: {
+    html: '<h1 class="govuk-heading-xl">Content</h1>'
+  },
+  items: [{
+    text: 'Create content'
+  }]
+}) }}
+
+  <p class="govuk-body-l">Change global content strings that are used across forms, like the continue button text.</p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Buttons</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Check answers button"
+            },
+            value: {
+              text: "Agree and submit claim"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Continue button"
+            },
+            value: {
+              html: "Continue"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Save button"
+            },
+            value: {
+              html: 'Save'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-l">File upload</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Remove button"
+            },
+            value: {
+              text: "Remove"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Allowed files description"
+            },
+            value: {
+              html: "You can upload {types}"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Save button"
+            },
+            value: {
+              html: 'Save'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-l">Date input</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Day label"
+            },
+            value: {
+              text: "Day"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Month label"
+            },
+            value: {
+              html: "Month"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Year label"
+            },
+            value: {
+              html: 'Year'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

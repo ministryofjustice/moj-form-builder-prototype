@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block header %}
+  {{super()}}
+
+  <div class="moj-primary-navigation">
+
+    <div class="moj-primary-navigation__container">
+
+      <div class="moj-primary-navigation__identity">
+        <span class="moj-primary-navigation__identity-title">HMCTS Complaints form &nbsp;{{mojBadge({ text: "Draft" })}}</span>
+      </div>
+
+      <div class="moj-primary-navigation__nav">
+
+        <nav class="moj-primary-navigationn" aria-label="Primary navigation">
+
+          <ul class="moj-primary-navigation__list">
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'summary' %} aria-current="page" {% endif %} href="{{getUrl('/1')}}">Summary</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'pages' %} aria-current="page" {% endif %} href="{{getUrl('/1/pages')}}">Pages</a>
+            </li>
+
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'components' %} aria-current="page" {% endif %} href="{{getUrl('/1/components')}}">Components</a>
+            </li>
+
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'content' %} aria-current="page" {% endif %} href="{{getUrl('/1/content')}}">Content</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'settings' %} aria-current="page" {% endif %} href="{{getUrl('/1/settings')}}">Settings</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'deploy' %} aria-current="page" {% endif %} href="{{getUrl('/1/deploy')}}">Publish</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" {% if pageId == 'analytics' %} aria-current="page" {% endif %} href="{{getUrl('/1/analytics')}}">Analytics</a>
+            </li>
+          </ul>
+
+        </nav>
+
+      </div>
+    </div>
+
+    </div>
+{% endblock %}

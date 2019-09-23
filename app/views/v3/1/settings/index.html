@@ -1,0 +1,194 @@
+{% extends "../layout.html" %}
+
+{% set pageId = 'settings' %}
+
+{% block content %}
+
+{{ mojPageHeaderActions({
+  heading: {
+    html: '<h1 class="govuk-heading-xl">Settings</h1>'
+  },
+  items: []
+}) }}
+
+  <p class="govuk-body-l">Check settings and make changes.</p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Basic details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "HMCTS complaints form"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Github repo"
+            },
+            value: {
+              html: "https://github.com/ministryofjustice/cica-same-roof-contact.git"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-l">Email configuration</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "CC subject"
+            },
+            value: {
+              text: "Your complaint has been submitted"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "CC body"
+            },
+            value: {
+              html: "Dear {fullname} Your complaint etc"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Team subject"
+            },
+            value: {
+              text: "Your complaint has been submitted"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Team body"
+            },
+            value: {
+              html: "Dear {fullname} Your complaint etc"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-l">Config params</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "PASSWORD"
+            },
+            value: {
+              text: "gold"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "SERVICE_EMAIL	"
+            },
+            value: {
+              html: "form-builder-team@digital.justice.gov.uk	"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact information"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "USERNAME"
+            },
+            value: {
+              html: "formbuilder"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

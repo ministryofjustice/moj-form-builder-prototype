@@ -144,3 +144,34 @@ $moj-page-width: 1220px;
   height: 100px;
   margin-left: 99px;
 }
+
+.app-summary-list--small {
+  display: block;
+
+  .govuk-summary-list__row {
+    margin-bottom: govuk-spacing(3);
+    border-bottom: 1px solid #b1b4b6;
+    display: block;
+    position: relative;
+  }
+
+  .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+    border: none;
+    display: block;
+    width: auto;
+    margin-bottom: govuk-spacing(1);
+    text-align: left;
+    padding: 0;
+  }
+
+  .govuk-summary-list__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .govuk-summary-list__value {
+    margin-bottom: govuk-spacing(3);
+  }
+
+}
