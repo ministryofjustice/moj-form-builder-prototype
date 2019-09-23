@@ -1,0 +1,31 @@
+{% extends "../../layout.html" %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages/1/show')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{getUrl('/1/pages/1/show')}}">
+        {{ govukInput({
+          label: {
+            text: "URL",
+            classes: 'govuk-label--xl',
+            isPageHeading: true
+          },
+          id: "url",
+          name: "url",
+          value: "/your-complaint"
+        }) }}
+
+        {{ govukButton({ text: 'Save' }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
