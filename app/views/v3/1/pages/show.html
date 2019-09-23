@@ -4,11 +4,7 @@
 
 {% block content %}
 
-  {{ mojPageHeaderActions({
-    heading: {
-      html: '<h1 class="govuk-heading-xl">Edit page</h1>'
-    }
-  }) }}
+  <h1 class="govuk-heading-xl">Edit page</h1>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -25,7 +21,7 @@
       <div class="app-form-panels">
         <div class="app-form-panel">
           <h1 class="govuk-heading-xl">Complaint details</h1>
-          <a href="{{getUrl('/1/pages/edit-heading')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+          <a href="{{getUrl('/1/pages/components/edit-heading')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
         </div>
         <div class="app-form-panel">
           {{ govukTextarea({
@@ -39,7 +35,7 @@
               "tabindex": "-1"
             }
           }) }}
-          <a href="{{getUrl('/1/pages/edit-textarea')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change description component</span></a>
+          <a href="{{getUrl('/1/pages/components/edit-textarea')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change description component</span></a>
         </div>
         <div class="app-form-panel">
           {{ govukRadios({
@@ -68,7 +64,7 @@
               }
             ]
           }) }}
-          <a href="{{getUrl('/1/pages/edit-radios')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+          <a href="{{getUrl('/1/pages/components/edit-radios')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
         </div>
         <div class="app-form-panel">
           {{ govukButton({
@@ -77,7 +73,7 @@
               "tabindex": "-1"
             }
           }) }}
-          <a href="{{getUrl('/1/pages/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+          <a href="{{getUrl('/1/pages/components/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
         </div>
       </div>
     </div>
@@ -166,7 +162,8 @@
       <p class="govuk-body">This is a danger zone.</p>
       {{ govukButton({
         text: "Delete page",
-        classes: "govuk-button--warning"
+        classes: "govuk-button--warning",
+        href: getUrl('/1/pages/delete')
       }) }}
     </div>
   </div>
