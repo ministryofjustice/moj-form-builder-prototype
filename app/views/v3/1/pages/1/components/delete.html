@@ -1,10 +1,10 @@
-{% extends "../../layout.html" %}
+{% extends "../../../layout.html" %}
 
 {% set pageId = 'edit' %}
 
 {% block beforeContent %}
   {{govukBackLink({
-    href: getUrl('/1/pages/show')
+    href: getUrl('/1/pages/1/show')
   }) }}
 {% endblock %}
 
@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukButton({ text: 'Yes, delete component', href: getUrl('/1/pages/show') }) }}
+      {{ govukButton({ text: 'Yes, delete component', href: getUrl('/1/pages/1/show') }) }}
     </div>
   </div>
 

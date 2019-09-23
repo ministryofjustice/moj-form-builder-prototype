@@ -1,10 +1,10 @@
-{% extends "../../layout.html" %}
+{% extends "../../../layout.html" %}
 
 {% set pageId = 'edit' %}
 
 {% block beforeContent %}
   {{govukBackLink({
-    href: getUrl('/1/pages/show')
+    href: getUrl('/1/pages/1/show')
   }) }}
 {% endblock %}
 
@@ -168,7 +168,7 @@
       {{ govukButton({
         text: "Delete component",
         classes: "govuk-button--warning",
-        href: getUrl('/1/pages/components/delete')
+        href: getUrl('/1/pages/1/components/delete')
       }) }}
     </div>
   </div>

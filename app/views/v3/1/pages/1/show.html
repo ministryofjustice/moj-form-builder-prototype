@@ -1,0 +1,166 @@
+{% extends "../../layout.html" %}
+
+{% set pageId = 'edit' %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Edit page</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{mojButtonMenu({
+        items: [{
+          text: 'Add component',
+          classes: 'govuk-button--secondary'
+        }, {
+          text: 'Reorder components',
+          classes: 'govuk-button--secondary'
+        }]
+      })}}
+
+      <div class="app-form-panels">
+        <div class="app-form-panel">
+          <h1 class="govuk-heading-xl">Complaint details</h1>
+          <a href="{{getUrl('/1/pages/1/components/edit-heading')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukTextarea({
+            label: {
+              text: "Complaint description",
+              classes: 'govuk-label--m'
+            },
+            id: "description",
+            name: "description",
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="{{getUrl('/1/pages/1/components/edit-textarea')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change description component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukRadios({
+            idPrefix: "changed-name",
+            name: "changed-name",
+            fieldset: {
+              legend: {
+                text: "Are you authorised to send this?",
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes",
+                attributes: {
+                  "tabindex": "-1"
+                }
+              },
+              {
+                value: "no",
+                text: "No",
+                attributes: {
+                  "tabindex": "-1"
+                }
+              }
+            ]
+          }) }}
+          <a href="{{getUrl('/1/pages/1/components/edit-radios')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukButton({
+            text: 'Continue',
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="{{getUrl('/1/pages/1/components/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      {{ govukSummaryList({
+        classes: 'app-summary-list--small',
+        rows: [
+          {
+            key: {
+              text: "Page type"
+            },
+            value: {
+              text: "Multi question"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "URL"
+            },
+            value: {
+              html: "/complaint"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Conditional display"
+            },
+            value: {
+              html: "On"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Steps"
+            },
+            value: {
+              html: "Off"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Danger zone</h2>
+      <p class="govuk-body">This is a danger zone.</p>
+      {{ govukButton({
+        text: "Delete page",
+        classes: "govuk-button--warning",
+        href: getUrl('/1/pages/1/delete')
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

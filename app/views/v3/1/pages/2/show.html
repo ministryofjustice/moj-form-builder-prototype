@@ -1,4 +1,4 @@
-{% extends "../layout.html" %}
+{% extends "../../layout.html" %}
 
 {% set pageId = 'edit' %}
 
@@ -8,63 +8,29 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{mojButtonMenu({
-        items: [{
-          text: 'Add component',
-          classes: 'govuk-button--secondary'
-        }, {
-          text: 'Reorder components',
-          classes: 'govuk-button--secondary'
-        }]
-      })}}
+
+        {{mojButtonMenu({
+          items: [{
+            text: 'Add component',
+            classes: 'govuk-button--secondary'
+          }]
+        })}}
 
       <div class="app-form-panels">
         <div class="app-form-panel">
-          <h1 class="govuk-heading-xl">Complaint details</h1>
-          <a href="{{getUrl('/1/pages/components/edit-heading')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
-        </div>
-        <div class="app-form-panel">
-          {{ govukTextarea({
+          {{ govukInput({
             label: {
-              text: "Complaint description",
-              classes: 'govuk-label--m'
+              text: "Your email address",
+              isPageHeading: true,
+              classes: 'govuk-label--xl'
             },
-            id: "description",
-            name: "description",
+            id: "email-address",
+            name: "email-address",
             attributes: {
               "tabindex": "-1"
             }
           }) }}
-          <a href="{{getUrl('/1/pages/components/edit-textarea')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change description component</span></a>
-        </div>
-        <div class="app-form-panel">
-          {{ govukRadios({
-            idPrefix: "changed-name",
-            name: "changed-name",
-            fieldset: {
-              legend: {
-                text: "Are you authorised to send this?",
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            items: [
-              {
-                value: "yes",
-                text: "Yes",
-                attributes: {
-                  "tabindex": "-1"
-                }
-              },
-              {
-                value: "no",
-                text: "No",
-                attributes: {
-                  "tabindex": "-1"
-                }
-              }
-            ]
-          }) }}
-          <a href="{{getUrl('/1/pages/components/edit-radios')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+          <a href="{{getUrl('/1/pages/2/components/edit-text-input')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change email component</span></a>
         </div>
         <div class="app-form-panel">
           {{ govukButton({
@@ -73,7 +39,7 @@
               "tabindex": "-1"
             }
           }) }}
-          <a href="{{getUrl('/1/pages/components/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+          <a href="{{getUrl('/1/pages/2/components/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
         </div>
       </div>
     </div>
@@ -87,7 +53,7 @@
               text: "Page type"
             },
             value: {
-              text: "Multi question"
+              text: "Single question"
             },
             actions: {
               items: [
@@ -104,7 +70,7 @@
               text: "URL"
             },
             value: {
-              html: "/complaint"
+              html: "/email-address"
             },
             actions: {
               items: [
@@ -121,7 +87,7 @@
               text: "Conditional display"
             },
             value: {
-              html: "On"
+              html: "Off"
             },
             actions: {
               items: [
@@ -163,7 +129,7 @@
       {{ govukButton({
         text: "Delete page",
         classes: "govuk-button--warning",
-        href: getUrl('/1/pages/delete')
+        href: getUrl('/1/pages/2/delete')
       }) }}
     </div>
   </div>

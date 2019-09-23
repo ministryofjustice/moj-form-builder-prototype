@@ -1,10 +1,10 @@
-{% extends "../layout.html" %}
+{% extends "../../layout.html" %}
 
 {% set pageId = 'edit' %}
 
 {% block beforeContent %}
   {{govukBackLink({
-    href: getUrl('/1/pages/show')
+    href: getUrl('/1/pages/1/show')
   }) }}
 {% endblock %}
 
