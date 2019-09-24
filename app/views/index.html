@@ -70,9 +70,7 @@
         html: mainHypothesesHtml
       }) }}
 
-      <h2 class="govuk-heading-l">Iterations</h2>
-
-      <h2 class="govuk-heading-m">Iteration 3</h2>
+      <h2 class="govuk-heading-l">Iteration 3</h2>
       <p class="govuk-body">More consistent handling of page/component properties. Added single question page type.</p>
 
       {% set hypothesesThreeHtml %}
@@ -105,7 +103,7 @@
 
       {{govukButton({ text: 'Open iteration 3', href: '/v3'})}}
 
-      <h2 class="govuk-heading-m">Iteration 2</h2>
+      <h2 class="govuk-heading-l">Iteration 2</h2>
       <p class="govuk-body">Uses navigation from GOV.UK Pay and uses card layout for basic collections (forms, pages etc).</p>
 
       {% set hypothesesTwoHtml %}
@@ -145,8 +143,22 @@
 
       {{govukButton({ text: 'Open iteration 2', href: '/v2'})}}
 
-      <h2 class="govuk-heading-m">Iteration 1</h2>
+      <h2 class="govuk-heading-l">Iteration 1</h2>
       <p class="govuk-body">Uses the MOJ Design System for as many components as possible. Includes modified identity bar.</p>
+
+      {% set hypothesesOneHtml %}
+        {{ appHypothesis({
+          title: "Changing page types",
+          context: "Currently, users are unable to change from single question to multi question pages. The workaround is to delete the page and start again.",
+          if: "we let users change page types",
+          then: "it will speed authors up"
+        }) }}
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Hypotheses",
+        html: hypothesesOneHtml
+      }) }}
 
       {{govukButton({ text: 'Open iteration 1', href: '/v1'})}}
 
