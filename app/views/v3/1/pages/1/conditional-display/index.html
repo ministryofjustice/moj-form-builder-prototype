@@ -1,0 +1,73 @@
+{% extends "../../../layout.html" %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages/1/show')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+
+      <form action="{{getUrl('/1/pages/1/conditional-display')}}" action="post">
+        {{ govukRadios({
+          idPrefix: "conditional-display",
+          name: "conditional-display",
+          fieldset: {
+            legend: {
+              text: "Conditional display",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "off",
+              text: "Off",
+              checked: enabled == false
+            },
+            {
+              value: "on",
+              text: "On",
+              checked: enabled
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: 'Save' }) }}
+      </form>
+
+      {% if enabled %}
+
+        <h2 class="govuk-heading-l">Rules</h2>
+
+        {% if rules %}
+          {% for rule in rules %}
+            <div class="app-rule">
+              <h3 class="govuk-heading-m">Rule {{ loop.index }}</h3>
+              <p class="govuk-body govuk-!-margin-bottom-0">{{rule.question}}</p>
+              <p class="govuk-body">
+                {{rule.operator}}
+                {% if rule.value %}
+                  <b>{{rule.value}}</b>
+                {% endif %}
+              </p>
+
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="govuk-body">No rules</p>
+        {% endif %}
+
+        {{govukButton({ text: 'Add rule', href: getUrl('/1/pages/1/conditional-display/create-rule-step1')})}}
+
+      {% endif %}
+
+    </div>
+  </div>
+
+{% endblock %}

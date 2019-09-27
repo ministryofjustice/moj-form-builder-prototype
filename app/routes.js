@@ -11,4 +11,6 @@ router.use('/:version/', function (req, res, next) {
   next();
 });
 
+router.use('/', require('./routes/v3'));
+
 module.exports = router
