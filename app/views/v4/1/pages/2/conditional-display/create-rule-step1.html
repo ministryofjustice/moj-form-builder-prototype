@@ -1,0 +1,237 @@
+{% extends "../../../layout.html" %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages/2/show')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Create rule</h1>
+
+      <form action="{{getUrl('/1/pages/2/conditional-display/create-rule-step1')}}" method="post">
+        {{ govukSelect({
+          id: "rule-question",
+          name: "rule-question",
+          label: {
+            text: "Question",
+            classes: 'govuk-label--m'
+          },
+          items: [
+            {
+              value: "Your name",
+              text: "Your name"
+            },
+            {
+              value: "Your email address",
+              text: "Your email address"
+            },
+            {
+              value: "Your complaint",
+              text: "Your complaint"
+            }
+          ]
+        }) }}
+
+        {% set isHtml %}
+          {{ govukInput({
+            id: "is-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set isNotHtml %}
+          {{ govukInput({
+            id: "is-not-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set startsWithHtml %}
+          {{ govukInput({
+            id: "starts-with-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set doesNotStartWithHtml %}
+          {{ govukInput({
+            id: "does-not-start-with-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set endsWithHtml %}
+          {{ govukInput({
+            id: "ends-with-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set doesNotEndWithHtml %}
+          {{ govukInput({
+            id: "does-not-end-with-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set includesHtml %}
+          {{ govukInput({
+            id: "includes-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set doesNotIncludeHtml %}
+          {{ govukInput({
+            id: "does-not-include-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set matchesHtml %}
+          {{ govukInput({
+            id: "matches-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {% set doesNotMatchHtml %}
+          {{ govukInput({
+            id: "does-not-match-value",
+            name: "rule-value",
+            label: {
+              text: "Value"
+            }
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "rule-operator",
+          name: "rule-operator",
+          fieldset: {
+            legend: {
+              text: "Operator",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Is answered",
+              text: "Is answered"
+            },
+            {
+              value: "Is not answered",
+              text: "Is not answered"
+            },
+            {
+              value: "Is",
+              text: "Is",
+              conditional: {
+                html: isHtml
+              }
+            },
+            {
+              value: "Is not",
+              text: "Is not",
+              conditional: {
+                html: isNotHtml
+              }
+            },
+            {
+              value: "Starts with",
+              text: "Starts with",
+              conditional: {
+                html: startsWithHtml
+              }
+            },
+            {
+              value: "Does not start with",
+              text: "Does not start with",
+              conditional: {
+                html: doesNotStartWithHtml
+              }
+            },
+            {
+              value: "Ends with",
+              text: "Ends with",
+              conditional: {
+                html: startsWithHtml
+              }
+            },
+            {
+              value: "Does not end with",
+              text: "Does not end with",
+              conditional: {
+                html: doesNotEndWithHtml
+              }
+            },
+            {
+              value: "Includes",
+              text: "Includes",
+              conditional: {
+                html: includesHtml
+              }
+            },
+            {
+              value: "Does not include",
+              text: "Does not include",
+              conditional: {
+                html: doesNotIncludeHtml
+              }
+            },
+            {
+              value: "Matches",
+              text: "Matches",
+              conditional: {
+                html: matchesHtml
+              }
+            },
+            {
+              value: "Does not match",
+              text: "Does not match",
+              conditional: {
+                html: doesNotMatchHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: 'Save rule' }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

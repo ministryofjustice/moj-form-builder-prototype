@@ -1,0 +1,120 @@
+{% extends "../../layout.html" %}
+
+{% set pageId = 'edit' %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Edit page</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {{mojButtonMenu({
+          items: [{
+            text: 'Add component',
+            classes: 'govuk-button--secondary'
+          }]
+        })}}
+
+      <div class="app-form-panels">
+        <div class="app-form-panel">
+          {{ govukInput({
+            label: {
+              text: "Your email address",
+              isPageHeading: true,
+              classes: 'govuk-label--xl'
+            },
+            id: "email-address",
+            name: "email-address",
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="{{getUrl('/1/pages/2/components/edit-text-input')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change email component</span></a>
+        </div>
+        <div class="app-form-panel">
+          {{ govukButton({
+            text: 'Continue',
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="{{getUrl('/1/pages/2/components/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      {{ govukSummaryList({
+        classes: 'app-summary-list--small',
+        rows: [
+          {
+            key: {
+              text: "Page type"
+            },
+            value: {
+              text: "Single question"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "URL"
+            },
+            value: {
+              html: "/email-address"
+            },
+            actions: {
+              items: [
+                {
+                  href: getUrl('/1/pages/2/edit-url'),
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Conditional display"
+            },
+            value: {
+              html: "No rules"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <!-- <p class="govuk-body"><a href="#">Edit JSON</a></p> -->
+
+      <!-- <h2 class="govuk-heading-m">Preview page</h2>
+      <p class="govuk-body"><a href="">Preview page (opens in a new window)</a></p> -->
+
+      <h2 class="govuk-heading-m">Danger zone</h2>
+      <p class="govuk-body">This is a danger zone.</p>
+      {{ govukButton({
+        text: "Delete page",
+        classes: "govuk-button--warning",
+        href: getUrl('/1/pages/2/delete')
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

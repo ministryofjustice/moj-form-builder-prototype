@@ -1,0 +1,64 @@
+{% extends "../../../layout.html" %}
+
+{% set pageId = 'edit' %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages/1/show')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{getUrl('/1/pages/show')}}">
+        {% set otherHtml %}
+          {{ govukInput({
+            id: "other",
+            name: "other",
+            type: "text",
+            label: {
+              text: "Button text"
+            }
+          }) }}
+        {% endset %}
+
+        {{ govukRadios({
+          idPrefix: "label",
+          name: "label",
+          fieldset: {
+            legend: {
+              text: "Button label",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "continue",
+              text: "Continue",
+              checked: true
+            },
+            {
+              value: "save-and-continue",
+              text: "Save and continue"
+            },
+            {
+              value: "other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({ text: 'Save' }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+

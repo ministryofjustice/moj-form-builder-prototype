@@ -1,0 +1,22 @@
+{% extends "../layout.html" %}
+
+{% set pageId = 'components' %}
+
+{% block content %}
+
+  {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Components</h1>'
+    },
+    items: []
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l">You can create a reusable component for use across multiple pages, like a contact panel.</p>
+
+      {{govukButton({ text: 'Create component' })}}
+    </div>
+  </div>
+
+{% endblock %}

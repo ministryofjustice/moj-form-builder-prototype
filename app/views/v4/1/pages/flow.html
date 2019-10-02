@@ -1,0 +1,138 @@
+{% extends "../layout.html" %}
+
+{% set pageId = 'pages' %}
+
+{% block content %}
+
+  {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Pages</h1>'
+    },
+    items: [{
+      text: 'Create page'
+    }]
+  }) }}
+
+  <div class="moj-action-bar">
+
+    {{ mojButtonMenu({
+      items: [{
+        text: 'Reorder',
+        classes: 'govuk-button--secondary'
+      }]
+    }) }}
+
+    <div class="govuk-!-font-size-19 govuk-!-margin-top-2" style="float: right; font-family: GDS Transport">
+      <a href="{{getUrl('/1/pages')}}">List</a> / <span>Flow</span>
+    </div>
+
+  </div>
+
+  <br><br>
+
+  {% set flowOneHtml %}
+    <div class="app-flow-item">
+        <a href="#">
+          <div class="app-flow-item__thumb">
+
+          </div>
+          <div class="app-flow-item__name">Start page</div>
+        </a>
+      </div>
+      <span class="app-flow-connector"></span>
+      <div class="app-flow-item">
+        <a href="#">
+          <div class="app-flow-item__thumb">
+
+          </div>
+          <div class="app-flow-item__name">Your name</div>
+        </a>
+      </div>
+      <span class="app-flow-connector"></span>
+      <div class="app-flow-item">
+          <a href="{{getUrl('/1/pages/2/show')}}">
+            <div class="app-flow-item__thumb">
+
+            </div>
+            <div class="app-flow-item__name">Your email</div>
+          </a>
+        </div>
+        <span class="app-flow-connector"></span>
+        <div class="app-flow-item">
+          <a href="{{getUrl('/1/pages/1/show')}}">
+            <div class="app-flow-item__thumb">
+
+            </div>
+            <div class="app-flow-item__name">Your complaint</div>
+          </a>
+        </div>
+        <span class="app-flow-connector"></span>
+      <div class="app-flow-item">
+          <a href="#">
+            <div class="app-flow-item__thumb">
+
+            </div>
+            <div class="app-flow-item__name">Would you like to provide documents to support your complaint?</div>
+          </a>
+        </div>
+        <span class="app-flow-connector"></span>
+        <div class="app-flow-item">
+          <a href="#">
+            <div class="app-flow-item__thumb">
+
+            </div>
+            <div class="app-flow-item__name">Check answers</div>
+          </a>
+        </div>
+        <span class="app-flow-connector"></span>
+        <div class="app-flow-item">
+          <a href="#">
+            <div class="app-flow-item__thumb">
+
+            </div>
+            <div class="app-flow-item__name">Confirmation page</div>
+          </a>
+        </div>
+    {% endset %}
+
+    {% set flowTwoHtml %}
+
+      <div class="app-flow-item">
+          <a href="#">
+            <div class="app-flow-item__thumb">
+
+            </div>
+            <div class="app-flow-item__name">Privacy policy</div>
+          </a>
+        </div>
+    {% endset %}
+
+    {% set flowThreeHtml %}
+      <div class="app-flow-item">
+        <a href="#">
+          <div class="app-flow-item__thumb">
+
+          </div>
+          <div class="app-flow-item__name">Page not found</div>
+        </a>
+      </div>
+    {% endset %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+      {{flowOneHtml | safe}}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+        {{flowTwoHtml | safe}}
+    </div>
+    <div class="govuk-grid-column-one-third">
+        {{flowThreeHtml | safe}}
+    </div>
+  </div>
+
+
+  <br>
+  <br>
+
+{% endblock %}

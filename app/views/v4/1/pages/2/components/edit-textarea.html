@@ -1,0 +1,177 @@
+{% extends "../../../layout.html" %}
+
+{% set pageId = 'edit' %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages/1/show')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- {{ mojPageHeaderActions({
+    heading: {
+      html: '<h1 class="govuk-heading-xl">Edit radio buttons</h1>'
+    }
+  }) }} -->
+  <h1 class="govuk-heading-xl">Edit question</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {{ govukInput({
+        label: {
+          text: "Field name",
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          text: "Set to a friendly name like ‘name-of-field’ which you can reference: [%name-of-field%]."
+        },
+        id: "field-name",
+        name: "field-name",
+        value: "complaint-description"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Label text",
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          text: "This is the question label"
+        },
+        id: "label",
+        name: "label",
+        value: "Complaint description"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Hint text (optional)",
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          text: "Displayed underneath the label"
+        },
+        id: "hint",
+        name: "hint",
+        value: ""
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Check answers label (optional)",
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          text: "This is how the legend will be displayed on the check answers page"
+        },
+        id: "summary-hint",
+        name: "summary-hint"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Label classes",
+          classes: 'govuk-label--m'
+        },
+        hint: {
+          text: "HTML classes that go on the label. Leave a space between each one."
+        },
+        id: "lab-cellasses",
+        name: "lab-classes",
+        value: "govuk-label--m"
+      }) }}
+
+      {{ govukButton({ text: 'Save' }) }}
+
+    </div>
+    <div class="govuk-grid-column-one-third">
+      {{ govukSummaryList({
+        classes: 'app-summary-list--small',
+        rows: [
+          {
+            key: {
+              text: "Conditional display"
+            },
+            value: {
+              text: "Off"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Repeatable"
+            },
+            value: {
+              text: "Off"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Required"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Validation rules"
+            },
+            value: {
+              text: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Danger zone</h2>
+      <p class="govuk-body">This is a danger zone.</p>
+      {{ govukButton({
+        text: "Delete component",
+        classes: "govuk-button--warning",
+        href: getUrl('/1/pages/1/components/delete')
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
+

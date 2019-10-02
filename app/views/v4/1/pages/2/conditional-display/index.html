@@ -1,0 +1,42 @@
+{% extends "../../../layout.html" %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages/2/show')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-l">Conditional display</h2>
+
+        {% if rules %}
+          <p class="govuk-body">The page will be displayed only when the following rules are satisfied.</p>
+
+          {% for rule in rules %}
+            <div class="app-rule">
+              <h3 class="govuk-heading-m">Rule {{ loop.index }}</h3>
+              <p class="govuk-body govuk-!-margin-bottom-0">{{rule.question}}</p>
+              <p class="govuk-body">
+                {{rule.operator}}
+                {% if rule.value %}
+                  <b>{{rule.value}}</b>
+                {% endif %}
+              </p>
+
+            </div>
+          {% endfor %}
+        {% else %}
+          <p class="govuk-body">No rules</p>
+        {% endif %}
+
+        {{govukButton({ text: 'Add rule', href: getUrl('/1/pages/2/conditional-display/create-rule-step1')})}}
+
+
+    </div>
+  </div>
+
+{% endblock %}
