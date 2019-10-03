@@ -3,10 +3,10 @@ var router = express.Router();
 
 router.get('/:version/1/pages/2/show', (req, res) => {
 
-  var rulesValue = 'No rules';
+  var rulesValue = 'None';
 
   if(req.session.data.rules) {
-    rulesValue = req.session.data.rules.length + ' rule(s).';
+    rulesValue = req.session.data.rules.length + ' rule(s)';
   }
 
   var pageObject = {
