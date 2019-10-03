@@ -71,14 +71,14 @@
       }) }}
 
       <h2 class="govuk-heading-l">Iteration 4</h2>
-      <p class="govuk-body">More consistent handling of page/component properties. Added single question page type.</p>
+      <p class="govuk-body">Simpler handling of display rules.</p>
 
-      {% set hypothesesThreeHtml %}
+      {% set hypothesesFourHtml %}
         {{ appHypothesis({
           title: "Visibility rules",
-          context: "Right now you have to turn on the ability to set visibility. This is long winded and unnecessary.",
+          context: "Currently, the ability to set visibility on a page/component is set explicitly before adding rules that govern it's display. This is long winded and unnecessary.",
           if: "we let users set 0 or many rules",
-          then: "users won't have to go through an extra complicated step of turning the feature on."
+          then: "users will find it easier to understand and create visibility rules."
         }) }}
       {% endset %}
 
