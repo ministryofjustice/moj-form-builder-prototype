@@ -16,7 +16,37 @@
         {% if rules %}
           <p class="govuk-body">The page will be displayed only when the following rules are satisfied.</p>
 
+
           <dl class="govuk-summary-list">
+              {% if rules.length > 1 %}
+              <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Condition type
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    All of the following rules must be met
+
+                    <!--
+
+                      At least one of the following conditions must be met
+
+                      (exactly) one of these conditions are met
+
+                    -->
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Edit<span class="govuk-visually-hidden">thing</span>
+                    </a>
+                  </dd>
+                </div>
+
+            </dl>
+
+          <h2 class="govuk-heading-m">Rules</h2>
+          {% endif %}
+          <dl class="govuk-summary-list">
+
             {% for rule in rules %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
