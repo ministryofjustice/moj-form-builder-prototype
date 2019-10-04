@@ -1,0 +1,35 @@
+{% extends "../layout.html" %}
+
+{% set pageId = 'delete-form' %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/settings')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Are you sure you want to delete the HMCTS complaints form?</h1>
+
+      <p class="govuk-body">Once you delete the form, there is no going back. Please be certain.</p>
+
+      {{ mojButtonMenu({
+        items: [{
+          text: "Yes, delete form",
+          href: getUrl('/'),
+          classes: "govuk-button--warning"
+        }, {
+          text: "No, get me out of here",
+          href: getUrl('/1/settings'),
+          classes: "govuk-button--secondary"
+        }]
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
