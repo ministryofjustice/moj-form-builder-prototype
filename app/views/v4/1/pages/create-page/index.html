@@ -22,11 +22,23 @@
       <form action="{{getUrl('/1/pages/3/show')}}">
         {{ govukInput({
           label: {
+            text: "Page title",
+            classes: 'govuk-label--m'
+          },
+          hint: {
+            text: 'For example ‘What is your nationality?’.'
+          },
+          id: "title",
+          name: "title"
+        }) }}
+
+        {{ govukInput({
+          label: {
             text: "Page URL",
             classes: 'govuk-label--m'
           },
           hint: {
-            text: 'For example ‘your-name’.'
+            text: 'For example ‘your-nationality’.'
           },
           id: "url",
           name: "url"
@@ -145,6 +157,12 @@
 
   <script>
     var validator = new MOJFrontend.FormValidator(document.forms[0]);
+    validator.addValidator('title', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter a page title'
+    }]);
     validator.addValidator('url', [{
       method: function(field) {
           return field.value.trim().length > 0;
