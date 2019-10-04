@@ -10,6 +10,10 @@
 
 {% block content %}
 
+  <div tabindex="-1" role="group" id="errorSummary" class="govuk-error-summary moj-hidden" aria-labelledby="error-summary-title" data-module="error-summary">
+
+  </div>
+
   <h1 class="govuk-heading-xl">Create form</h1>
 
   <div class="govuk-grid-row">
@@ -45,5 +49,25 @@
       </form>
     </div>
   </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    var validator = new MOJFrontend.FormValidator(document.forms[0]);
+    validator.addValidator('form-name', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter a form name'
+    }]);
+    validator.addValidator('form-url', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter a sub domain'
+    }]);
+  </script>
 
 {% endblock %}
