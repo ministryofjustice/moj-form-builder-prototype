@@ -1,0 +1,168 @@
+{% extends "../../layout.html" %}
+
+{% set pageId = 'create-page' %}
+
+{% block beforeContent %}
+  {{govukBackLink({
+    href: getUrl('/1/pages')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div tabindex="-1" role="group" id="errorSummary" class="govuk-error-summary moj-hidden" aria-labelledby="error-summary-title" data-module="error-summary">
+
+      </div>
+
+      <h1 class="govuk-heading-xl">Create page</h1>
+
+      <form action="{{getUrl('/1/pages/3/show')}}">
+        {{ govukInput({
+          label: {
+            text: "Page URL",
+            classes: 'govuk-label--m'
+          },
+          hint: {
+            text: 'For example ‘your-name’.'
+          },
+          id: "url",
+          name: "url"
+        }) }}
+
+        {{ govukRadios({
+          idPrefix: "type",
+          name: "type",
+          fieldset: {
+            legend: {
+              text: "Choose page type",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "start-page",
+              text: "Start page"
+            },
+            {
+              value: "single-question",
+              text: "Single question page"
+            },
+            {
+              value: "multiple-question",
+              text: "Multi question page"
+            },
+            {
+              value: "check-answers",
+              text: "Check answers page"
+            },
+            {
+              value: "confirmation",
+              text: "Confirmation page"
+            },
+            {
+              value: "content",
+              text: "Content page"
+            }
+          ]
+        }) }}
+
+
+        {% set subStepHtml %}
+
+        {{ govukSelect({
+          id: "page",
+          name: "page",
+          label: {
+            text: "Choose page"
+          },
+          items: [
+            {
+              value: "published",
+              text: "Your name"
+            },
+            {
+              value: "updated",
+              text: "Your email address",
+              selected: true
+            },
+            {
+              value: "views",
+              text: "Your complaint"
+            },
+            {
+              value: "views",
+              text: "Would you like to provide documents to support your complaint?"
+            },
+            {
+              value: "views",
+              text: "Check answers"
+            }
+          ]
+        }) }}
+        {% endset %}
+
+        {{ govukRadios({
+          idPrefix: "step",
+          name: "step",
+          fieldset: {
+            legend: {
+              text: "Choose where the page goes",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "main-journey",
+              text: "As part of the main journey"
+            },
+            {
+              value: "sub-step",
+              text: "As a sub step",
+              conditional: {
+                html: subStepHtml
+              }
+            },
+            {
+              value: "standalone",
+              text: "As a standalone page"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: 'Create page'
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    var validator = new MOJFrontend.FormValidator(document.forms[0]);
+    validator.addValidator('url', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter a page URL'
+    }]);
+    validator.addValidator('type', [{
+      method: function(field) {
+        return field.value.trim().length > 0;
+      },
+      message: 'Choose a page type'
+    }]);
+    validator.addValidator('step', [{
+      method: function(field) {
+        return field.value.trim().length > 0;
+      },
+      message: 'Choose where the page goes'
+    }]);
+  </script>
+
+{% endblock %}
