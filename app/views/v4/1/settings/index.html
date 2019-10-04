@@ -189,6 +189,15 @@
         ]
       }) }}
     </div>
+    <div class="govuk-grid-column-one-third">
+      <h2 class="govuk-heading-m">Danger zone</h2>
+      <p class="govuk-body">This is a danger zone.</p>
+      {{ govukButton({
+        text: "Delete form",
+        classes: "govuk-button--warning",
+        href: getUrl('/1/delete-form')
+      }) }}
+    </div>
   </div>
 
 {% endblock %}
