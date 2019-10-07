@@ -1,0 +1,102 @@
+{% extends "../../layout.html" %}
+
+{% set pageId = 'edit' %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Edit page</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{mojButtonMenu({
+        items: [{
+          text: 'Add component',
+          classes: 'govuk-button--secondary'
+        }, {
+          text: 'Reorder components',
+          classes: 'govuk-button--secondary'
+        }]
+      })}}
+
+      <div class="app-form-panels">
+        <div class="app-form-panel">
+          {{ govukButton({
+            text: 'Continue',
+            attributes: {
+              "tabindex": "-1"
+            }
+          }) }}
+          <a href="{{getUrl('/1/pages/3/components/edit-button')}}" class="app-form-panel__link"><span class="govuk-visually-hidden"> Change button component</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+
+      {{ govukSummaryList({
+        classes: 'app-summary-list--small',
+        rows: [
+          {
+            key: {
+              text: "Page type"
+            },
+            value: {
+              text: "Multiple question"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "URL"
+            },
+            value: {
+              html: "/other-details"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Conditional display"
+            },
+            value: {
+              html: "None."
+            },
+            actions: {
+              items: [
+                {
+                  href: getUrl('/1/pages/2/conditional-display'),
+                  text: "Edit",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Danger zone</h2>
+      <p class="govuk-body">This is a danger zone.</p>
+      {{ govukButton({
+        text: "Delete page",
+        classes: "govuk-button--warning",
+        href: getUrl('/1/pages/1/delete')
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
