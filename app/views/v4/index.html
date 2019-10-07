@@ -9,19 +9,28 @@
       html: '<h1 class="govuk-heading-xl">Forms</h1>'
     },
     items: [{
-      text: 'Create form'
+      text: 'Create form',
+      href: getUrl('/create-form')
     }]
   }) }}
 
 
   <div class="app-form-item app-form-item--first">
-    <h2 class="govuk-heading-m"><a href="{{getUrl('/1')}}">HMCTS complaints form</a></h2>
-    <p class="govuk-body-s">https://hmcts-complaints.form.service.justice.gov.uk (<a href="https://hmcts-complaints.form.service.justice.gov.uk">View</a>)</p>
-  </div>
-  <div class="app-form-item app-form-item--last">
     <h2 class="govuk-heading-m"><a href="#">Child Funeral Fund</a></h2>
     <p class="govuk-body-s">https://claim-for-costs-of-a-childs-funeral.form.service.justice.gov.uk (<a href="https://claim-for-costs-of-a-childs-funeral.form.service.justice.gov.uk">View</a>)</p>
   </div>
+
+  <div class="app-form-item">
+    <h2 class="govuk-heading-m"><a href="{{ getUrl('/1') }}">HMCTS complaints form</a></h2>
+    <p class="govuk-body-s">https://hmcts-complaints.form.service.justice.gov.uk (<a href="https://hmcts-complaints.form.service.justice.gov.uk">View</a>)</p>
+  </div>
+
+  {%- if data['form-name'] %}
+  <div class="app-form-item app-form-item--last">
+    <h2 class="govuk-heading-m"><a href="#">{{ data['form-name'] }}</a></h2>
+    <p class="govuk-body-s">{{ 'https://' + data['form-url'] | replace(' ','-') + '.form.service.justice.gov.uk' }} (<a href="#">View</a>)</p>
+  </div>
+  {% endif -%}
 
 
 

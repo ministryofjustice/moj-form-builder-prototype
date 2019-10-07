@@ -1,0 +1,73 @@
+{% extends "../base.html" %}
+
+{% set pageId = 'create-form' %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    href: getUrl('/')
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div tabindex="-1" role="group" id="errorSummary" class="govuk-error-summary moj-hidden" aria-labelledby="error-summary-title" data-module="error-summary">
+
+  </div>
+
+  <h1 class="govuk-heading-xl">Create form</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="{{ getUrl('/') }}" method="post">
+        {{ govukInput({
+          label: {
+            text: "Name of the form",
+            classes: 'govuk-label--m'
+          },
+          hint: {
+            text: 'For example ‘Register to vote’.'
+          },
+          id: "form-name",
+          name: "form-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Sub domain",
+            classes: 'govuk-label--m'
+          },
+          hint: {
+            text: 'The bit before form.justice.gov.uk, for example, ‘register-to-vote’. Separate words with dashes.'
+          },
+          id: "form-url",
+          name: "form-url"
+        }) }}
+
+        {{ govukButton({
+          text: 'Create form'
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+  <script>
+    var validator = new MOJFrontend.FormValidator(document.forms[0]);
+    validator.addValidator('form-name', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter a form name'
+    }]);
+    validator.addValidator('form-url', [{
+      method: function(field) {
+          return field.value.trim().length > 0;
+      },
+      message: 'Enter a sub domain'
+    }]);
+  </script>
+
+{% endblock %}
