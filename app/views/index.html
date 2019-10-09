@@ -15,7 +15,7 @@
         Form Builder prototype
       </h1>
 
-      <p class="govuk-body">Form Builder lets people create and publish forms using components from the GOV.UK Design System.</p>
+      <p class="govuk-body">The Form Builder platform lets you create and publish digital forms using the GOV.UK Design System without a dev team.</p>
       <p class="govuk-body">This prototype aims to address the main issues from the road map workshop on 30 July 2019.</p>
 
       <h2 class="govuk-heading-l">Overarching hypotheses</h2>
@@ -26,40 +26,40 @@
 
         {{ appHypothesis({
           title: "1: use the design system",
-          context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the interface are confusing and are inconsistent with the MOJ Design System.",
-          if: "we use the MOJ Design System",
+          context: "The Form Builder platform was originally made for developers. It was created rapidly before the creation of the MOJ Design System. As a result many parts of the platform UI are confusing and inconsistent with the GOV.UK Design System and MOJ Design System.",
+          if: "we use the GOV.UK and MOJ Design System",
           then: "users will find it easier to use and more accessible",
-          because: "the MOJ Design System is full of high-quality, accessible components that don\'t need to be made from scratch"
+          because: "the GOV.UK and MOJ Design System contains usable and accessible components that don\'t need to be made from scratch"
         }) }}
 
         {{ appHypothesis({
           title: "2: expose hidden features",
           context: "The Form Builder platform was originally made for developers to create forms by editing JSON. Users just needed to know the API. The product's mission changed to include non-developers too. This meant exposing some of the functionality as part of the interface. But lots of the functionality remains only possible via JSON configuration which is hard to use and error prone. This has resulted in the Form Builder platform team supporting users in the creation process.",
           if: "we expose all functionality in the interface",
-          then: "users will be able to make forms quickly and without support from the platform team",
-          measurements: ["the Form Builder team no longer have to assist publishers in configuring forms"]
+          then: "users will be able to make forms quickly and without support from the Form Builder team",
+          measurements: ["the Form Builder team no longer have to assist publishers in creating forms"]
         }) }}
 
         {{ appHypothesis({
           title: "3: 1 application",
-          context: "The Form Builder platform is made up of several disparate apps. The Console lets users create forms and setup a Git repo. The Editor lets users create pages out of the GOV.UK Design System components. The Publisher lets users deploy the form on the web. This is not very simple to use and means users have to remember what application does what, and how to access each application.",
-          if: "we combine Console, Editor and Publisher into 1 application",
-          then: "users will find the application much simplier to operate without having to think about what application they need to access based on what task they're trying to do.",
-          measurements: ["the complete functionality of Form Builder is accessible under 1 application"]
+          context: "The Form Builder platform is made up of several applications which users have to jump between to create the form. The Console lets users create forms. The Editor lets users create pages using the GOV.UK Design System components. The Publisher lets users publish the form. This is not simple to use and means users have to remember what application does what, and how to access each application.",
+          if: "we combine the Console, Editor and Publisher into 1 application",
+          then: "users will find the application much simpler to operate without having to think about which application they need to access based on what task they're trying to do.",
+          measurements: ["users can access Form Builder’s functionality using 1 application"]
         }) }}
 
         {{ appHypothesis({
           title: "4: web-based application",
           context: "Before users can set up a form, they need to download software onto their computer. It's long winded, error prone, requires support from the platform team, doesn't work on all computers and ultimately fails the service standard: ‘make sure everyone can use the service’ and ‘make the service simple to use’. It's also inconsistent with other platforms like GOV.UK Pay.",
-          if: "we turn the Console and Editor into a web based application",
-          then: "the platform will be significantly more accessible, easier to use and not require support",
+          if: "we make the Console and Editor web based",
+          then: "the platform will be much more accessible, easier to use and not require support",
           measurements: ["users don't have to download anything in order to make new forms or edit existing ones"]
         }) }}
 
         {{ appHypothesis({
           title: "5: analytics",
-          context: "Currently forms can be set up to use Google Analytics (GA). But GA doesn't make it easy to see important metrics that are useful to know across all forms like percentage of users who submit the form, or completition times.",
-          if: "we we show common metrics in Form Builder",
+          context: "Currently forms can be set up to use Google Analytics (GA). But GA doesn't make it easy to see important metrics that are useful to know across all forms like percentage of users who submit the form, or completion times.",
+          if: "we show common metrics in Form Builder",
           then: "it will be easier for authors to improve their service based on data",
           measurements: ["authors are able to see useful metrics on their form inside Form Builder"]
         }) }}
@@ -95,9 +95,9 @@
       {% set hypothesesThreeHtml %}
         {{ appHypothesis({
           title: "Page and component props",
-          context: "The previous exploration exposed secondary component props like repeatability as a form at the bottom of the edit screen. This meant there's lots of forms and (primary) buttons all in one column. It also doesn't work well for sub flows that require multiple steps to configure",
-          if: "we use the same right hand ‘page props’ on the page edit screen",
-          then: "it will be consistent with the page view, easier to separate primary and secondary tasks and let users configure multi-step features like conditional display."
+          context: "The previous iteration displays related meta data (like repeatability) below the main attributes of the component. This created multiple forms and primary actions on the page and made it difficult to work with when some of meta data requires entire flows to configure it like conditional visibility. It was also inconsistent with the way we display meta data at the page level.",
+          if: "we use the same right hand ‘page properties’ on the component screen",
+          then: "the same things will be displayed consistently which will improve cognition and let users easily configure multi-step features like conditional display."
         }) }}
 
         {{ appHypothesis({
@@ -128,21 +128,21 @@
       {% set hypothesesTwoHtml %}
         {{ appHypothesis({
           title: "Platform navigation",
-          context: "The GOV.UK Design System and MOJ Design System have so far focused on citizen facing transactional sites and internal facing case working system. As such the navigation might not be as appropriate for platforms like Form Builder.",
+          context: "The GOV.UK Design System and MOJ Design System have so far focused on citizen facing transactional sites and internal facing case working systems. As such the navigation might not be as appropriate for platforms like Form Builder.",
           if: "we use the header and navigation structures from platforms like GOV.UK Pay",
           then: "it will better fit the IA that Form Builder needs"
         }) }}
 
         {{ appHypothesis({
           title: "Group all page types together",
-          context: "In the previous iteration, error pages were separated from standard pages which makes the primary nav longer and consisting of two similar items.",
+          context: "In the previous iteration, error pages (like 404 and 500 pages) were separated from standard pages which makes the primary nav longer and consisting of two similar items.",
           if: "we put error pages inside the pages section",
-          then: "it the navigation will be clearer and the error pages more easy to discover"
+          then: "the navigation will be clearer and the error pages more easy to discover"
         }) }}
 
         {{ appHypothesis({
           title: "Add summary page",
-          context: "Landing on the pages page is a bit assumes that all users who are working on the form want to edit pages when they could be looking for other things like metrics, global settings, and deployment related information.",
+          context: "Landing on the pages page assumes that all users who are working on the form want to edit pages when they could be looking for other things like metrics, global settings, and deployment-related information.",
           if: "we add a summary page",
           then: "we can surface the most pertinent information to all users regardless of the task they are looking to proceed"
         }) }}
@@ -150,10 +150,12 @@
         {{ appHypothesis({
           title: "Vertical page flow view",
           context: "Currently the flow view is shown horizontally causes users to scroll unconventionally",
-          if: "we add show the flow view vertically",
+          if: "we show the flow view vertically",
           then: "users can scroll conventionally down the page to see more of the pages"
         }) }}
       {% endset %}
+
+      <!-- https://www.nngroup.com/articles/horizontal-scrolling/ -->
 
       {{ govukDetails({
         summaryText: "Hypotheses",
